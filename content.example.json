@@ -1,0 +1,30 @@
+{
+  "reminders": [
+    "Speak slowly and clearly",
+    "Pause before answering",
+    "Smile"
+  ],
+  "questions": [
+    {
+      "title": "Q1: Tell me about yourself",
+      "text": "I'm a software engineer with 3 years of experience building web applications. I specialize in React and Node.js, and I'm passionate about creating clean, maintainable code."
+    },
+    {
+      "title": "Q2: Why this company?",
+      "text": "I've been following your work on [product] and I'm impressed by the engineering culture. The scale of problems you solve aligns with where I want to grow."
+    },
+    {
+      "title": "Q3: Biggest challenge?",
+      "text": "I led a migration from a monolith to microservices. The hardest part was maintaining uptime during the transition. We used feature flags and gradual traffic shifting to achieve zero downtime. [STOP]"
+    }
+  ],
+  "sections": [
+    {
+      "title": "My Questions",
+      "items": [
+        "What does a typical day look like on this team?",
+        "How do you approach technical debt?"
+      ]
+    }
+  ]
+}

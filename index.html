@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Teleprompter</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+    line-height: 1.5;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: transparent;
+  }
+  body.compact { font-size: 12px; line-height: 1.35; }
+
+  #shell {
+    background: rgba(15, 15, 30, 0.88);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Drag bar */
+  .titlebar {
+    -webkit-app-region: drag;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px 10px 0 0;
+    flex-shrink: 0;
+  }
+  .titlebar span { font-size: 11px; color: #666; }
+  .titlebar .close-btn {
+    -webkit-app-region: no-drag;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+  }
+  .titlebar .close-btn:hover { color: #ff4444; }
+
+  /* Reminders */
+  .reminders {
+    background: rgba(50, 20, 20, 0.95);
+    border-bottom: 2px solid #ff4444;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  body.compact .reminders { padding: 5px 8px; font-size: 10px; }
+  .reminders div { color: #ff8888; margin: 1px 0; }
+
+  /* Controls */
+  .controls {
+    background: rgba(0,0,0,0.3);
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    flex-shrink: 0;
+    -webkit-app-region: no-drag;
+  }
+  .controls label { color: #777; white-space: nowrap; }
+  .controls input[type=range] { width: 70px; cursor: pointer; }
+  .controls button {
+    background: rgba(255,255,255,0.08);
+    color: #aaa;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+  }
+  .controls button:hover { background: rgba(255,255,255,0.15); }
+  .controls button.active { background: rgba(74, 168, 100, 0.3); border-color: #4a8; color: #fff; }
+
+  /* Scrollable content */
+  .scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    -webkit-app-region: no-drag;
+  }
+  .scroll-area::-webkit-scrollbar { width: 4px; }
+  .scroll-area::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+  body.compact .scroll-area { padding: 6px 8px; }
+
+  .question {
+    margin-bottom: 14px;
+    border-left: 3px solid rgba(15, 52, 96, 0.9);
+    padding-left: 10px;
+  }
+  body.compact .question { margin-bottom: 8px; padding-left: 6px; }
+
+  .q-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #e94560;
+    margin-bottom: 4px;
+  }
+  .lead { color: #4ade80; font-style: italic; }
+  .warn { color: #ff6b6b; font-weight: 700; }
+  .key { color: #fbbf24; font-weight: 600; }
+  .stop { color: #ff4444; font-weight: 900; text-transform: uppercase; }
+
+  ul { padding-left: 16px; margin: 3px 0; }
+  li { margin: 2px 0; }
+  body.compact li { margin: 1px 0; }
+
+  .section-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #818cf8;
+    margin: 14px 0 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div id="shell">
+
+  <div class="titlebar">
+    <span>&#9654; Interview Teleprompter</span>
+    <button class="close-btn" onclick="window.close()" title="Close">&times;</button>
+  </div>
+
+  <div class="reminders" id="reminders"></div>
+
+  <div class="controls">
+    <label>Opacity</label>
+    <input type="range" id="opacity" min="10" max="100" value="88">
+    <span id="opVal">88%</span>
+    <button id="compactBtn" onclick="toggleCompact()">Compact</button>
+  </div>
+
+  <div class="scroll-area" id="content"></div>
+</div>
+
+<script>
+  const opSlider = document.getElementById('opacity');
+  const opVal = document.getElementById('opVal');
+  const shell = document.getElementById('shell');
+
+  opSlider.addEventListener('input', () => {
+    const v = opSlider.value;
+    opVal.textContent = v + '%';
+    shell.style.background = `rgba(15, 15, 30, ${v / 100})`;
+  });
+
+  function toggleCompact() {
+    document.body.classList.toggle('compact');
+    document.getElementById('compactBtn').classList.toggle('active');
+  }
+
+  function escHtml(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function render(data) {
+    // Reminders
+    const rem = document.getElementById('reminders');
+    rem.innerHTML = data.reminders.map(r => `<div>\u26a0\ufe0f ${escHtml(r)}</div>`).join('');
+
+    // Questions
+    const content = document.getElementById('content');
+    let html = '';
+    for (const q of data.questions) {
+      html += `<div class="question"><div class="q-title">${escHtml(q.title)}</div><p>${escHtml(q.text)}</p></div>`;
+    }
+
+    // Extra sections
+    for (const s of data.sections || []) {
+      html += `<div class="section-title">${escHtml(s.title)}</div><ul>${s.items.map(i => `<li>${escHtml(i)}</li>`).join('')}</ul>`;
+    }
+
+    content.innerHTML = html;
+  }
+
+  fetch('content.json')
+    .then(r => r.json())
+    .then(render)
+    .catch(e => {
+      document.getElementById('content').innerHTML = `<p style="color:#ff4444;padding:12px">Failed to load content.json: ${e.message}</p>`;
+    });
+</script>
+</body>
+</html>
