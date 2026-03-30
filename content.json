@@ -1,0 +1,696 @@
+{
+  "reminders": [
+    "NO \"absolutely\" — pause, then answer",
+    "LIFECYCLE not life circle | SCALE not skill | FINTRAC = FIN-TRACK",
+    "Self-correction loop — NOT reinforcement learning (RL is Phase 2)",
+    "Pick a story → STAR it → STOP. Max 2 minutes.",
+    "ASK 2-3 QUESTIONS AT THE END — this is non-negotiable"
+  ],
+  "themes": [
+    {
+      "label": "Challenging project",
+      "primary_story": "S5_challenge",
+      "focus": "Lead with the bottleneck, then the core challenge: making LLMs produce reliable code. Emphasize the self-correction loop as your solution to non-determinism.",
+      "backup_story": "S1"
+    },
+    {
+      "label": "Teamwork / leadership / collaboration",
+      "primary_story": "S6_teamwork",
+      "focus": "Emphasize the team dynamic: 3 people, 3 independent proposals, manager selected yours, you led feature engineering. Show how you brought the team along, not just overruled them.",
+      "backup_story": "S2"
+    },
+    {
+      "label": "Conflict / disagreement / persuasion",
+      "primary_story": "S6_conflict",
+      "focus": "Zero in on the rolling window debate: WHY it breaks customer-level granularity, how you explained DWT in plain language, and the side-by-side evidence that convinced them.",
+      "backup_story": "S4"
+    },
+    {
+      "label": "Initiative / self-motivation / independence",
+      "primary_story": "S5_initiative",
+      "focus": "Emphasize: no one asked you to build this. You read Phume's published paper, saw the gap between theory and implementation, and built the entire system on your own time on top of regular responsibilities.",
+      "backup_story": "S1"
+    },
+    {
+      "label": "Failure / resilience / adaptability",
+      "primary_story": "S3",
+      "focus": "The arc matters: early success → dropped to 50th → dedicated personal time to self-study transformers → hybrid approach → climbed back to 2nd. Lesson: initial failure is critical feedback.",
+      "backup_story": "S4"
+    },
+    {
+      "label": "Receiving feedback / criticism",
+      "primary_story": "S4",
+      "focus": "Be honest about the frustration first, then the mindset shift. Key beats: took it personally → treated as roadmap → re-examined every assumption → earned endorsement + reference letter.",
+      "backup_story": null
+    },
+    {
+      "label": "Quick decision / tight deadline",
+      "primary_story": "S1_deadline",
+      "focus": "Two pressure points: (1) chose XGBoost over logistic regression against government norms, (2) delivered analysis to deployment in 2.5 weeks. Show the reasoning was fast but sound, not reckless.",
+      "backup_story": null
+    },
+    {
+      "label": "New technology / continuous learning",
+      "primary_story": "S5_newtech",
+      "focus": "Frame as self-directed learning: FastAPI, multi-agent orchestration, React frontend — all self-taught specifically for this project. Also mention Azure DP-100, Kaggle pushing you to learn transformers, StrataScratch daily.",
+      "backup_story": "S3"
+    },
+    {
+      "label": "Stakeholder comm / non-technical audience",
+      "primary_story": "S1B",
+      "focus": "This is the presentation moment, not the build. Policy makers pushed back on XGBoost. You used the cat vs dog analogy: 'Does it bark?' = one question gets you 90% of the way. Connected to their world: officers used intuition for 20 years, we need a model that thinks like them.",
+      "backup_story": "S2"
+    },
+    {
+      "label": "Large data / scaling",
+      "primary_story": "S6_scaling",
+      "focus": "Emphasize the numbers: millions of transactions, 6 FINTRAC channels, prototyped in Pandas then translated to PySpark once cluster access was granted. Show you understand when to scale and why.",
+      "backup_story": null
+    },
+    {
+      "label": "Prioritization / time management",
+      "primary_story": "prioritization",
+      "focus": "Use the CAVCO 3-workstream framework: dashboards first (leadership depends on it daily), forecasting second (cross-team dependency), anomaly detection third (internal, no deadline). Principle: external dependencies first.",
+      "backup_story": null
+    },
+    {
+      "label": "Risk mitigation / handling ambiguity",
+      "primary_story": "risk_mitigation",
+      "focus": "Two levels: project risk (S2A proof of concept before full build) and delivery risk (CAVCO — flagged delay early, adjusted timeline). Principle: validate early, communicate early, always have a fallback.",
+      "backup_story": "S5"
+    },
+    {
+      "label": "Problem-solving / analytical thinking",
+      "primary_story": "S1_problemsolving",
+      "focus": "Emphasize the diagnostic process: analyzed 7,000 case files, recognized complexity was too non-linear, concluded logistic regression insufficient — chose the right tool for the right problem.",
+      "backup_story": "S5"
+    },
+    {
+      "label": "Business impact / client focus / ROI",
+      "primary_story": "S1_impact",
+      "focus": "Lead with numbers: 99.7% accuracy, 98% automation, $700K+ savings, still deployed. For client angle, use S2 backup: fixed broken billing → 100K unit follow-up order.",
+      "backup_story": "S2"
+    },
+    {
+      "label": "Innovation / creative solution",
+      "primary_story": "S5_innovation",
+      "focus": "Frame as: research paper proposed the idea, but you turned theory into a working system. 6-agent pipeline, self-correction loop, React monitoring frontend — novel architecture that works in practice.",
+      "backup_story": "S6"
+    },
+    {
+      "label": "Process improvement / efficiency",
+      "primary_story": "S1_process",
+      "focus": "Frame the transformation: decades-old manual process with no standardization → fully automated system in 2.5 weeks. Emphasize before/after contrast and that it's still running in production.",
+      "backup_story": "S2"
+    },
+    {
+      "label": "Regulated environment / compliance",
+      "primary_story": "S5_compliance",
+      "focus": "Every feature traces back to original FINTRAC regulatory text. Agent 6 verifies each alert against the regulation. Full traceability is built into the architecture, not bolted on.",
+      "backup_story": "S6"
+    },
+    {
+      "label": "Explaining complex concepts simply",
+      "primary_story": "S1B",
+      "focus": "Cat vs dog analogy is the centerpiece. Also available: S6 where you explained DWT as 'two things — overall trend and short-term frequency — DWT does both in one step.'",
+      "backup_story": "S6"
+    },
+    {
+      "label": "Building trust / credibility",
+      "primary_story": "S1_trust",
+      "focus": "Manager's directive was specifically to maximize accuracy to build trust and ensure adoption. 99.7% earned that trust. For interpersonal angle, use S4: earned endorsement through consistent improvement.",
+      "backup_story": "S4"
+    },
+    {
+      "label": "Walk me through background",
+      "primary_story": "intro_background",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Why TD?",
+      "primary_story": "intro_why_td",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Why leaving Scotiabank?",
+      "primary_story": "intro_leaving",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Career goals",
+      "primary_story": "intro_goals",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Weakness",
+      "primary_story": "weakness",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Strength",
+      "primary_story": "strength",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "5 years experience gap",
+      "primary_story": "intro_gap",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Compensation",
+      "primary_story": "intro_comp",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Other offers",
+      "primary_story": "intro_offers",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "What do you know about TD?",
+      "primary_story": "intro_know_td",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Why data science?",
+      "primary_story": "intro_why_ds",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Cross-functional experience",
+      "primary_story": "intro_cross",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Anything else?",
+      "primary_story": "intro_anything",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Revenue forecasting (resume)",
+      "primary_story": "resume_arima",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Jane Street (resume)",
+      "primary_story": "resume_jane",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "TensorFlow (resume)",
+      "primary_story": "resume_tf",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Keeping up with technology",
+      "primary_story": "keeping_uptodate",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Prioritization / multitasking",
+      "primary_story": "prioritization",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Risk mitigation",
+      "primary_story": "risk_mitigation",
+      "focus": null,
+      "backup_story": null
+    }
+  ],
+  "stories": {
+    "S5_challenge": {
+      "title": "S5 → Challenging Project",
+      "bullets": [
+        "⚠️ LEAD WITH THE CHALLENGE STATEMENT — not 3 minutes of background",
+        "[SITUATION] At Scotiabank, AML feature engineering is a major bottleneck — translating FINTRAC regulatory documents into executable detection features takes days of manual work by experts who understand both compliance and data schemas.",
+        "My senior manager Phume had published a research paper proposing a multi-agent LLM architecture to solve this, but there was no working implementation.",
+        "I took the initiative to build the full system from scratch as an independent research project, on top of my regular responsibilities.",
+        "[TASK — THE CHALLENGE] The biggest challenge was making LLMs produce production-quality code reliably — getting consistent, validated output from a non-deterministic system. That's fundamentally hard because every time you call the model, you can get a slightly different answer.",
+        "[ACTION] To solve this, I designed and built the entire platform end-to-end: a FastAPI backend with 6 specialized AI agents, each following a Perceive-Reason-Act loop.",
+        "The pipeline reads regulatory text, adapts to the target database schema, generates Python feature code, validates it through deterministic checks, runs Isolation Forest anomaly detection, and verifies each alert against the same regulatory text — closing the loop with full traceability.",
+        "The key to solving the reliability challenge was the self-correction loop: when the Validator catches errors — missing columns, type mismatches, empty outputs — it feeds structured feedback back to the Engineer agent for automatic retry, up to 5 iterations. This is what makes the system reliable despite LLMs being non-deterministic.",
+        "⚠️ SAY 'self-correction loop with structured feedback' — NOT 'reinforcement learning'",
+        "I also built a React frontend so the team can monitor each agent working in real time.",
+        "[RESULT] The pipeline compiles regulatory text into executable features in 2-3 minutes versus days manually.",
+        "It achieved AUC of 90-91.5% on the IBM AML benchmark.",
+        "We presented the full research to the SVP and director, and we're presenting to the full research team next week.",
+        "⚠️ STOP HERE"
+      ]
+    },
+    "S5_initiative": {
+      "title": "S5 → Initiative / Self-Motivation / Independence",
+      "bullets": [
+        "[SITUATION] At Scotiabank, my senior manager Phume had published a research paper proposing a multi-agent LLM architecture to automate AML feature engineering — translating FINTRAC regulatory documents into executable detection features. But there was no working implementation. It was just a theoretical proposal.",
+        "[TASK — THE INITIATIVE] No one asked me to build this. I read the paper, saw the gap between theory and a working system, and decided to take it on as an independent research project — on top of my regular anomaly detection responsibilities and on my own time.",
+        "[ACTION] I designed and built the entire platform from scratch: a FastAPI backend with 6 specialized AI agents, each following a Perceive-Reason-Act loop.",
+        "The biggest challenge was making LLMs produce production-quality code reliably. To solve that, I built a self-correction loop — when the Validator catches errors, it feeds structured feedback back to the Engineer agent for automatic retry, up to 5 iterations.",
+        "⚠️ SAY 'self-correction loop with structured feedback' — NOT 'reinforcement learning'",
+        "I also built a React frontend so the team can monitor the pipeline in real time. FastAPI, multi-agent orchestration, and React were all self-taught specifically for this project.",
+        "[RESULT] The pipeline compiles regulatory text into executable features in 2-3 minutes versus days manually.",
+        "AUC of 90-91.5% on the IBM AML benchmark.",
+        "The director reviewed it and we've presented the research to the SVP. It's opening up future research directions for the entire team.",
+        "What started as my own side initiative is now becoming a foundation for the team's next phase of work.",
+        "⚠️ STOP HERE"
+      ]
+    },
+    "S5_newtech": {
+      "title": "S5 → New Technology / Continuous Learning",
+      "bullets": [
+        "[SITUATION] At Scotiabank, I saw an opportunity to automate AML feature engineering using the multi-agent LLM architecture my senior manager had proposed in a research paper. But building it required technologies I hadn't used before.",
+        "[TASK — THE LEARNING CURVE] To build this system, I needed to teach myself FastAPI for the backend, multi-agent orchestration patterns for coordinating 6 AI agents, and React for the monitoring frontend — all while continuing my regular anomaly detection work.",
+        "[ACTION] I started by studying multi-agent architectures and the Perceive-Reason-Act pattern, then built the system incrementally.",
+        "I designed 6 specialized agents: one reads regulatory text, one adapts to the database schema, one generates Python features, one validates through deterministic checks, one runs Isolation Forest detection, and one verifies alerts against the regulation.",
+        "The hardest part was making LLMs produce reliable code. I solved this with a self-correction loop — structured feedback from the Validator back to the Engineer agent for automatic retry.",
+        "⚠️ SAY 'self-correction loop with structured feedback' — NOT 'reinforcement learning'",
+        "I built the React frontend so the team can watch each agent working in real time — that was important for building trust in the system.",
+        "[RESULT] The pipeline achieved AUC of 90-91.5% and reduces feature engineering from days to 2-3 minutes.",
+        "Beyond this project, I also earned my Azure DP-100 certification, and I compete on Kaggle which pushed me to learn transformer models like RoBERTa. I use StrataScratch daily to keep my SQL and Python sharp.",
+        "My approach to learning is: find a real problem that excites me, and learn whatever I need to solve it.",
+        "⚠️ STOP HERE"
+      ]
+    },
+    "S5_innovation": {
+      "title": "S5 → Innovation / Creative Solution",
+      "bullets": [
+        "[SITUATION] At Scotiabank, AML feature engineering was a major bottleneck — days of manual work by experts for each regulatory update. My senior manager had published a research paper proposing a solution, but it was purely theoretical. No one had built it.",
+        "[TASK — THE INNOVATION] I saw the opportunity to turn that research into a working system — something nobody had done before. The challenge was that LLMs are non-deterministic, so getting production-quality code reliably from AI agents is fundamentally hard.",
+        "[ACTION] I designed a novel architecture: 6 specialized AI agents in a pipeline, each with a distinct role — from reading regulatory text to generating Python features to detecting anomalies.",
+        "The key innovation was the self-correction loop. Rather than hoping the LLM gets it right the first time, the Validator checks every output against deterministic rules — missing columns, type mismatches, empty outputs — and feeds structured feedback back for automatic retry. This is what made a non-deterministic system reliable enough for production.",
+        "⚠️ SAY 'self-correction loop with structured feedback' — NOT 'reinforcement learning'",
+        "I also built a React frontend so the team can monitor each agent in real time — making the 'black box' transparent.",
+        "The whole system — FastAPI backend, 6 agents, self-correction, React frontend — was designed and built by me from scratch.",
+        "[RESULT] Regulatory text to executable features in 2-3 minutes versus days manually.",
+        "AUC of 90-91.5% on the IBM AML benchmark.",
+        "We presented to the SVP and director, and it's opening up entirely new research directions — like benchmarking agent-generated features against manually engineered ones.",
+        "⚠️ STOP HERE"
+      ]
+    },
+    "S5_compliance": {
+      "title": "S5 → Regulated Environment / Compliance",
+      "bullets": [
+        "[SITUATION] At Scotiabank, a core challenge in AML is ensuring every detection feature can be traced back to its regulatory source — FINTRAC regulatory documents. The current manual process ensures this because experts read the regulation and hand-code features. But it takes days per update.",
+        "[TASK — THE COMPLIANCE CONSTRAINT] I built a multi-agent LLM pipeline to automate this, but the key design constraint was: every generated feature must maintain full traceability back to the original regulatory text. In a regulated banking environment, you can't have a black box generating features with no audit trail.",
+        "[ACTION] I built traceability directly into the architecture. Agent 1 reads the FINTRAC regulatory text. Agent 2 maps it to the target database schema. Agent 3 generates Python feature code. Agent 4 validates through deterministic checks. Agent 5 runs Isolation Forest anomaly detection. And critically, Agent 6 verifies every single alert against the original regulatory text — closing the loop.",
+        "The self-correction mechanism also serves a compliance purpose: when the Validator catches errors, it creates a structured log of what went wrong and how it was fixed, so every output is auditable.",
+        "⚠️ SAY 'self-correction loop with structured feedback' — NOT 'reinforcement learning'",
+        "I also built a React frontend so compliance teams and data scientists can monitor exactly what each agent is doing and trace any feature back to its regulatory source.",
+        "[RESULT] The pipeline achieved AUC of 90-91.5% while maintaining full regulatory traceability — something that's non-negotiable in AML.",
+        "We presented to the SVP and director, and the traceability design is one of the reasons leadership is confident enough to explore putting this into production.",
+        "⚠️ STOP HERE"
+      ]
+    },
+    "S6_teamwork": {
+      "title": "S6 → Teamwork / Leadership / Collaboration",
+      "bullets": [
+        "[SITUATION] At Scotiabank, our team of three was tasked with building a Customer Risk Score — a framework that scores customers 0 to 100 based on transactional behavior, to complement the existing static Client Risk Rating.",
+        "[TASK — THE TEAM DYNAMIC] All three of us independently proposed feature engineering approaches. My senior manager selected mine, so I took the lead on feature engineering — but I still needed buy-in from my teammates who had invested time in their own proposals.",
+        "[ACTION] Rather than just overruling them, I focused on showing why my approach solved a problem theirs didn't. My teammates proposed rolling window features — counting transactions in 30, 60, 90 day windows. The issue is rolling windows produce multiple rows per customer, but we need strictly one score per customer. I introduced Discrete Wavelet Transform instead.",
+        "I explained it in simple terms: 'What we really want is two things — the customer's overall trend and their short-term frequency. DWT does both in one step and gives us one score per customer. No merging needed.'",
+        "Once I showed a side-by-side comparison on a sample, they were convinced. From there, we worked collaboratively — I led the feature engineering, and we collectively validated the features using multiple models.",
+        "We prototyped in Pandas, then translated to PySpark together once cluster access was granted — millions of rows across six FINTRAC channels.",
+        "[RESULT] The feature set passed validation across both supervised and unsupervised models.",
+        "The CRS framework is now the foundation for Sprint 2, and the features, model validation, and data pipeline all feed into the production system.",
+        "⚠️ STOP — don't go longer"
+      ]
+    },
+    "S6_conflict": {
+      "title": "S6 → Conflict / Disagreement / Persuasion",
+      "bullets": [
+        "[SITUATION] At Scotiabank, our team of three was building a Customer Risk Score — scoring customers 0 to 100 based on transactional behavior across millions of transactions and six FINTRAC channels.",
+        "All three of us independently proposed feature engineering approaches. My senior manager selected mine and I took the lead — but each teammate had invested time in their own approach.",
+        "[TASK — THE DISAGREEMENT] The biggest challenge was a technical disagreement over feature engineering. My teammates proposed rolling window features — for example, counting transactions in the past 30, 60, 90 days for each customer.",
+        "[ACTION — THE ARGUMENT] I identified a fundamental flaw: when you compute rolling windows, you get multiple rows per customer at different time points. But our final CRS score needs to be strictly one number per customer. Merging rolling windows back to customer-level requires choosing which window to keep, or averaging them — and either way you lose information or introduce inconsistency.",
+        "[HOW I PERSUADED THEM] Rather than just saying 'my way is better,' I explained it simply: 'What we really want is to capture two things — the customer's overall trend and their short-term frequency. Discrete Wavelet Transform does both in one step and outputs a single score per customer. No need to merge multiple time windows.'",
+        "Then I showed a side-by-side comparison on a sample dataset — my approach versus rolling windows. The results spoke for themselves.",
+        "Once they saw the evidence, they were fully convinced. We moved forward together.",
+        "We prototyped in Pandas, then translated to PySpark to handle the full scale.",
+        "[RESULT] The feature set passed validation across both supervised and unsupervised models.",
+        "The CRS framework is now the foundation for Sprint 2.",
+        "⚠️ STOP — don't go longer"
+      ]
+    },
+    "S6_scaling": {
+      "title": "S6 → Large Data / Scaling",
+      "bullets": [
+        "[SITUATION] At Scotiabank, our team was building a Customer Risk Score — scoring customers based on transactional behavior. The dataset was massive: millions of transaction records spanning six FINTRAC channels — electronic funds transfers, large cash transactions, casino disbursements, and more.",
+        "[TASK — THE SCALE CHALLENGE] The challenge was twofold: first, engineer features that work at customer-level granularity across this volume of data, and second, build a pipeline that could actually process it within reasonable time.",
+        "[ACTION] I led the feature engineering using Discrete Wavelet Transform, which captures both overall trends and short-term frequency in a single pass per customer — no expensive window joins needed.",
+        "We started prototyping in Pandas on sample data to validate the approach quickly. But once we needed to run against the full dataset — millions of rows across all six channels — Pandas couldn't handle it.",
+        "When cluster access was granted, I translated the entire pipeline from Pandas to PySpark. This required rethinking some operations — Pandas relies on row-level indexing while PySpark is columnar and distributed — but the core logic transferred cleanly because I'd designed the feature engineering to be aggregation-friendly from the start.",
+        "We validated features across both supervised and unsupervised models on the full dataset.",
+        "[RESULT] The feature set passed validation at full scale.",
+        "The CRS framework — features, model validation, and data pipeline — is now the foundation for Sprint 2 and feeds into the production system.",
+        "⚠️ STOP"
+      ]
+    },
+    "S1_deadline": {
+      "title": "S1 → Quick Decision / Tight Deadline",
+      "bullets": [
+        "[SITUATION] At the Government of Canada, my team managed a major tax credit program with a workflow that had been manual for decades. Each Tax Credit Officer used their own unstandardized methods, creating inconsistency and a significant bottleneck.",
+        "[TASK — THE TIME PRESSURE] I was tasked with leading a full process re-engineering — designing and deploying a fully automated detection system. My manager's directive was to maximize accuracy to build trust and ensure adoption.",
+        "[ACTION — THE QUICK DECISION] I analyzed over 7,000 historical case files and quickly realized the decision-making process was too complex and non-linear for simple models. I had to make a fast call: the government traditionally relies on logistic regression for interpretability, but the data demanded something more powerful.",
+        "Given the business priority was predictive power over interpretability — and these officers had been making decisions for 20 years with no written rules, just intuition — I chose XGBoost. A tree-based model that mimics the way humans actually make decisions: focus on the most distinguishing signal first.",
+        "Once performance was proven, I collaborated with the back-end engineering team to integrate it into production.",
+        "The entire project — from initial analysis to production deployment — was completed in 2.5 weeks.",
+        "[RESULT] 99.7% accuracy, automated 98% of manual reviews, over $700,000 in annual cost savings.",
+        "The system is still deployed and running in production at the Government of Canada today.",
+        "⚠️ STOP HERE — don't add extras after $700K"
+      ]
+    },
+    "S1_problemsolving": {
+      "title": "S1 → Problem-Solving / Analytical Thinking",
+      "bullets": [
+        "[SITUATION] At the Government of Canada, my team managed a major tax credit program where case reviews had been done manually for decades — each officer using their own unstandardized methods.",
+        "[TASK] I was tasked with designing and deploying a fully automated detection system. My manager's primary directive was to maximize accuracy.",
+        "[ACTION — THE DIAGNOSTIC PROCESS] I started by analyzing over 7,000 historical case files to understand the patterns in how decisions were actually made.",
+        "What I found was that the decision-making process was highly complex and non-linear — officers weren't following a simple set of rules. They were using experience and intuition built over decades, weighing many factors in context-dependent ways.",
+        "This told me logistic regression would be insufficient — it assumes linear relationships and weights every feature independently. The data needed a model that could capture non-linear interactions and prioritize the most important signals automatically.",
+        "I chose XGBoost specifically because tree-based models handle exactly this: they find the most discriminating feature first, then split further — much closer to how the officers were actually making decisions.",
+        "I validated the model, then collaborated with the back-end engineering team to integrate it into production. Analysis to deployment in 2.5 weeks.",
+        "[RESULT] 99.7% accuracy, automated 98% of manual reviews, over $700,000 in annual cost savings.",
+        "⚠️ STOP HERE"
+      ]
+    },
+    "S1_impact": {
+      "title": "S1 → Business Impact / ROI / Client Focus",
+      "bullets": [
+        "[SITUATION] At the Government of Canada, a major tax credit program had been running on fully manual case reviews for decades — each officer using their own methods, creating inconsistency and a massive operational bottleneck.",
+        "[TASK] I was tasked with automating this process — designing and deploying a detection system that could replace manual reviews at scale.",
+        "[ACTION] I analyzed over 7,000 historical case files, chose XGBoost over logistic regression because the decision-making patterns were too complex and non-linear for simple models, and collaborated with the engineering team to integrate it into production.",
+        "The entire project was completed in 2.5 weeks from analysis to deployment.",
+        "[RESULT — THE IMPACT] 99.7% accuracy — this was critical because the business priority was to build trust in the system so officers would actually adopt it.",
+        "Automated 98% of manual reviews — officers who previously spent their days on routine case reviews could now focus on the genuinely ambiguous cases that needed human judgment.",
+        "Over $700,000 in annual cost savings from the efficiency gains.",
+        "Transformed a decades-old ambiguous process into a data-driven system that's still deployed and running in production today.",
+        "⚠️ STOP HERE — don't add extras"
+      ]
+    },
+    "S1_process": {
+      "title": "S1 → Process Improvement / Efficiency",
+      "bullets": [
+        "[SITUATION — THE BEFORE] At the Government of Canada, a major tax credit program relied on case reviews that had been done manually for decades. There was no standardized process — each Tax Credit Officer used their own methods, creating inconsistencies and a significant operational bottleneck. It was a system built entirely on individual judgment with no documentation or rules.",
+        "[TASK] I was tasked with leading a complete process re-engineering — replacing this decades-old manual workflow with a fully automated detection system.",
+        "[ACTION — THE TRANSFORMATION] I analyzed over 7,000 historical case files to understand the existing decision patterns, chose XGBoost because the complexity was too non-linear for simple models, and collaborated with the engineering team to put it into production.",
+        "The key design decision was optimizing for accuracy first — my manager's directive was that the system needed to earn trust before officers would adopt it. You can't automate a process people don't trust.",
+        "From first analysis to live production deployment: 2.5 weeks.",
+        "[RESULT — THE AFTER] A decades-old, unstandardized, fully manual process → an automated system with 99.7% accuracy.",
+        "98% of manual reviews automated — officers now focus on the genuinely ambiguous cases.",
+        "Over $700,000 in annual cost savings.",
+        "The system is still deployed and running in production at the Government of Canada today — not a pilot, not a prototype, a permanent transformation.",
+        "⚠️ STOP HERE"
+      ]
+    },
+    "S1_trust": {
+      "title": "S1 → Building Trust / Credibility",
+      "bullets": [
+        "[SITUATION] At the Government of Canada, case reviews for a major tax credit program had been done manually for decades. Each officer used their own methods — there was no standardization.",
+        "[TASK — THE TRUST CHALLENGE] I was tasked with automating this process. But my manager's primary directive wasn't just 'make it work' — it was specifically to maximize accuracy to build trust and ensure adoption. If the officers didn't trust the system, they'd never use it.",
+        "[ACTION] I knew that in this context, the worst outcome would be a system that made visible errors — even a few false positives could destroy trust in automation. So I optimized for accuracy above all else.",
+        "I analyzed over 7,000 historical case files, chose XGBoost because logistic regression couldn't capture the complex, non-linear decision patterns, and iterated until I achieved the accuracy threshold that would earn confidence.",
+        "I also made sure to present the results to my director and the policy makers in terms they could understand — using analogies to explain why a tree-based model was the right choice for mimicking human decision-making.",
+        "Then I collaborated with the engineering team to integrate it into production. Analysis to deployment: 2.5 weeks.",
+        "[RESULT — TRUST EARNED] 99.7% accuracy — this was the number that earned trust.",
+        "Officers adopted the system because they saw it making the same decisions they would have made.",
+        "98% of manual reviews automated, over $700,000 in annual savings.",
+        "Still running in production today — the trust held.",
+        "⚠️ STOP HERE"
+      ]
+    },
+    "S1B": {
+      "title": "S1-B: CAVCO — Stakeholder Communication (SAME PROJECT, DIFFERENT MOMENT)",
+      "use_for": "stakeholder communication, non-technical audience, explaining complex concepts, cross-functional, persuasion",
+      "bullets": [
+        "[SITUATION] Same CAVCO project — but fast-forward past the build to the presentation.",
+        "After I built the model, I presented the results to my director and a room full of policy makers — most of them non-technical.",
+        "[TASK] They pushed back: 'Why not stick with logistic regression? That's what we're familiar with.'",
+        "I needed to justify a technical decision to people who don't think in algorithms.",
+        "[ACTION] I used an analogy: 'Imagine you're trying to tell a cat from a dog.'",
+        "'Logistic regression forces you to weigh every single feature equally — eyes, nose, tail, body size, sound.'",
+        "'But a tree-based model asks one question first: does it bark? That single question gets you 90% of the way there.'",
+        "'That's actually how our brains work — we don't analyze every detail when making a quick decision, we spot the most obvious signal first and decide from there.'",
+        "(⭐ BUSINESS CONNECTION) 'These officers have been doing case reviews for 20 years with no written rules or guidelines — just experience and intuition. We needed a model that mimics that human decision-making process, focusing on the most distinguishing signals first.'",
+        "[RESULT] They got it. We moved forward with XGBoost.",
+        "The system is still deployed in production at the Government of Canada today."
+      ]
+    },
+    "S2": {
+      "title": "S2: Orange — EV Data Pipeline",
+      "use_for": "end-to-end pipeline, client impact, problem-solving, business impact",
+      "bullets": [
+        "[SITUATION] At Orange Business Services, our client was a leading global EV manufacturer using our IoT connectivity service.",
+        "The service generated massive multi-gigabyte CSV files.",
+        "Their billing process was broken — they were trying to use Excel, which was impossible, preventing accurate invoicing.",
+        "[TASK] I was tasked with solving this data processing bottleneck — designing an automated system to reliably process the data and enable accurate usage-based client invoicing.",
+        "[ACTION] I moved the entire workflow from desktop-based tools to a scalable server-side environment.",
+        "I engineered an end-to-end data pipeline using Python and SQL that automatically ingested raw multi-gigabyte files, cleaned and aggregated the data, and calculated usage metrics for billing.",
+        "I led the technical implementation and ensured it met the client's requirements for accuracy and performance.",
+        "[RESULT] The pipeline completely solved the data processing issue and enabled accurate usage-based invoicing, fixing a critical part of their revenue cycle.",
+        "(⭐ CLIENT IMPACT) The client placed a follow-up order for 100,000 additional IoT units."
+      ]
+    },
+    "S3": {
+      "title": "S3: Kaggle NLP — Failure & Comeback",
+      "use_for": "failure, setback, resilience, adaptability, learning new skills, persistence",
+      "bullets": [
+        "[SITUATION] I competed in a Kaggle competition for YouTube spam detection.",
+        "My initial approach using Logistic Regression and Naive Bayes got me high on the leaderboard early.",
+        "[TASK] As the competition progressed, my rank dropped below 50th.",
+        "My conventional approach couldn't capture the complex semantic patterns of modern spam.",
+        "(⭐ FAILURE) I had to decide: keep tuning what wasn't working, or invest time learning something fundamentally different.",
+        "[ACTION] I dedicated personal time to self-studying transformer-based models like RoBERTa.",
+        "(⭐ ADAPTABILITY) I architected a hybrid model — combining deep semantic features from RoBERTa with traditional TF-IDF features, then fed the combined features into an ensemble of XGBoost and LightGBM classifiers.",
+        "[RESULT] Climbed back to 2nd place with over 94% accuracy.",
+        "(⭐ LESSON) Key lesson: an initial failure is critical feedback — analyze, learn, iterate.",
+        "⚠️ DON'T mention vector dimensions"
+      ]
+    },
+    "S4": {
+      "title": "S4: Khaveen — Receiving Critical Feedback",
+      "use_for": "feedback, criticism, working under pressure, growth mindset, building trust",
+      "bullets": [
+        "[SITUATION] At Khaveen Investments, a Singapore-based hedge fund, I was preparing my first comprehensive stock pitch.",
+        "I received highly critical feedback from my manager who rigorously questioned my assumptions and analytical depth.",
+        "[TASK] My immediate reaction was frustration — especially in that high-pressure hedge fund environment.",
+        "But I understood the real task was to improve my analytical process and learn to handle direct feedback professionally.",
+        "[ACTION] I shifted my mindset from taking it personally to treating it as a roadmap for improvement.",
+        "(⭐ FEEDBACK) I re-examined every assumption, ensuring all conclusions were backed by hard data rather than surface-level assumptions.",
+        "(⭐ IF ASKED FOR SPECIFIC EXAMPLE) Early on, I projected a stock's growth based on the company's own revenue guidance without cross-referencing analyst consensus or industry trends. My manager called it out: 'You're taking management at face value.' After that, I started cross-referencing every projection against at least two independent sources before putting it in a pitch. That became my standard process.",
+        "In subsequent meetings, I focused on listening carefully, asking clarifying questions, and responding to the professional points being made rather than reacting to the pressure.",
+        "[RESULT] The quality of my analysis improved significantly week after week.",
+        "My manager explicitly recognized my rapid improvement and ability to grow from criticism.",
+        "I completed the internship with a strong endorsement and a reference letter for my graduate school application.",
+        "⚠️ STOP HERE"
+      ]
+    },
+    "intro_background": {
+      "title": "Walk me through your background",
+      "bullets": [
+        "I'm a data scientist with experience across the full machine learning LIFECYCLE ← pronounce correctly",
+        "Right now I'm on the AI and Machine Learning team at Scotiabank, where I work with PySpark, Pandas, and SQL on a daily basis building anomaly detection models serving the AML business line.",
+        "I also personally lead a multi-agent LLM pipeline project that translates FINTRAC regulatory documents into validated Python features — reducing manual feature engineering from days to minutes.",
+        "Before that, and still ongoing part-time, I've been at the Government of Canada, where I built an XGBoost model that automated 98% of manual reviews, and I own the end-to-end Power BI pipeline for the Financial Leadership Team.",
+        "I hold an Honours BSc in Statistics and Computer Science from U of T, and I'm finishing my MMA at Rotman this year.",
+        "⚠️ EDUCATION LAST — lead with experience, not school"
+      ]
+    },
+    "intro_why_td": {
+      "title": "Why TD / Why this role?",
+      "bullets": [
+        "Three reasons.",
+        "First, the JD describes exactly the kind of end-to-end work I've been doing — using SQL and PySpark for data extraction, Python for modeling, Power BI for visualization to the leadership team. And I'm already doing this with customer-level financial data at Scotiabank serving AML, so the domain carries over directly.",
+        "Second, TD's Analytics, Insights and AI team operates at a SCALE I really want to work at — I'm excited to see how my work can drive impact across 27 million customers. ← SAY 'SCALE' NOT 'SKILL'",
+        "Third, I'm natively bilingual in both English and French. I grew up in Montreal, I went through the entire Quebec education system. So when I saw bilingual listed as a nice-to-have, it felt like a natural fit."
+      ]
+    },
+    "intro_leaving": {
+      "title": "Why leaving Scotiabank?",
+      "bullets": [
+        "My current role has a flexible end date in August. I'm looking for my first full-time role after graduation.",
+        "⚠️ STOP — don't say practicum, don't mention return offers"
+      ]
+    },
+    "intro_goals": {
+      "title": "Where do you see yourself in a few years?",
+      "bullets": [
+        "In the near term, I want to deepen my expertise in production ML — taking models from prototype to deployment at scale in a regulated environment like banking.",
+        "Longer term, I'd love to take on more technical leadership, helping shape how the team approaches new problems and mentoring junior data scientists.",
+        "TD's AI team feels like the right place to grow in that direction.",
+        "⚠️ STOP — don't say 'manager'"
+      ]
+    },
+    "intro_gap": {
+      "title": "5 years experience gap",
+      "bullets": [
+        "Between Scotiabank, Canadian Heritage, and Rotman, I've packed a lot into a short time across the full stack this role requires — Python, SQL, PySpark, machine learning modeling, Power BI, and Azure.",
+        "I'm also already working with customer-level financial data in a regulated banking environment at Scotiabank, so the domain context isn't new to me.",
+        "I hold my Azure DP-100 certification.",
+        "I may not have the years, but I believe the density and variety of what I've done makes me competitive for this role.",
+        "⚠️ STOP"
+      ]
+    },
+    "weakness": {
+      "title": "Biggest weakness",
+      "bullets": [
+        "At the earlier stage of my career, I sometimes tended to over-engineer solutions — reaching for a complex model when a simpler approach would answer the business question just fine.",
+        "I've gotten better at this by forcing myself to start with the simplest viable solution first, and only add complexity when the data justifies it.",
+        "Working at Scotiabank and the Government of Canada really helped — my leadership are non-technical people, so you really have to prioritize storytelling, traceability, and explainability.",
+        "That forced me to prioritize impact over elegance.",
+        "⚠️ STOP"
+      ]
+    },
+    "strength": {
+      "title": "Biggest strength",
+      "bullets": [
+        "I own problems end-to-end — from understanding the business question, to building the data pipeline, training the model, and delivering stakeholder-facing outputs.",
+        "I've done this at every role: SQL extraction to Power BI dashboards at Canadian Heritage, PySpark pipelines to anomaly detection at Scotiabank.",
+        "And I'm already doing it with customer-level financial data in a regulated banking environment, so the context isn't new to me.",
+        "⚠️ STOP"
+      ]
+    },
+    "intro_comp": {
+      "title": "Compensation",
+      "bullets": [
+        "I'm flexible on compensation. The posted range aligns with what I'd expect for this type of role.",
+        "⚠️ STOP — you already said $130K to Melaine, don't contradict"
+      ]
+    },
+    "intro_offers": {
+      "title": "Other offers",
+      "bullets": [
+        "I'm actively exploring opportunities and have a few processes in progress, but this role is a strong fit for what I'm looking for. I'm flexible on timeline.",
+        "⚠️ STOP"
+      ]
+    },
+    "intro_know_td": {
+      "title": "What do you know about TD?",
+      "bullets": [
+        "TD is one of Canada's Big Five banks, serving about 27 million customers globally.",
+        "What excites me specifically is the Analytics, Insights and AI team — TD has been investing heavily in AI and data science capabilities, and this role sits right at the center of that.",
+        "I'm already working with customer-level financial data in a regulated banking environment at Scotiabank, so I understand the compliance and data governance standards that come with this space.",
+        "⚠️ STOP"
+      ]
+    },
+    "intro_why_ds": {
+      "title": "Why data science?",
+      "bullets": [
+        "I've always been drawn to the intersection of math and real-world impact.",
+        "My undergrad in statistics and CS gave me the technical foundation, but what hooked me was seeing how a model I built at Canadian Heritage could automate 98% of a team's manual work — that's when I knew I wanted to do this full-time.",
+        "I like that data science in banking is never purely academic — there's always a business decision at the end.",
+        "⚠️ STOP"
+      ]
+    },
+    "intro_cross": {
+      "title": "Cross-functional / stakeholder experience",
+      "bullets": [
+        "At Canadian Heritage, I work directly with the Financial Leadership Team — I built their Power BI dashboards and present monthly performance reports to them.",
+        "That taught me how to translate model outputs into business language.",
+        "At Scotiabank, I work with compliance analysts and the engineering team to make sure the features my pipeline generates actually meet FINTRAC regulatory requirements.",
+        "So I'm used to bridging the gap between technical work and business stakeholders.",
+        "⚠️ STOP"
+      ]
+    },
+    "intro_anything": {
+      "title": "Anything else you'd like me to know?",
+      "bullets": [
+        "Just that I'm genuinely excited about this role.",
+        "The combination of end-to-end data science, working at TD's scale, and the bilingual aspect — it checks every box for what I'm looking for in my first full-time role.",
+        "I'm ready to hit the ground running.",
+        "⚠️ STOP"
+      ]
+    },
+    "resume_arima": {
+      "title": "Revenue Forecasting (ARIMA/Prophet on resume)",
+      "bullets": [
+        "I started by testing ARIMA and Prophet — I used AIC to select ARIMA parameters, but the time series was relatively short, only a few years of monthly data, so the model was sensitive to outliers.",
+        "Prophet handled seasonality well but the output was harder for leadership to interpret.",
+        "I found that the tax credit program had such strong seasonal patterns that a simpler approach outperformed both.",
+        "I used OLS regression to compute seasonal weights from historical data, then applied those weights to project the full year.",
+        "Sum of 12 monthly weights equals 1.0, so you can project from partial actuals.",
+        "It was more accurate, and leadership could understand it — they could see 'March is historically 15% of annual revenue' rather than a black-box forecast.",
+        "Sometimes simpler is better.",
+        "⚠️ SAY 'I explored multiple approaches and chose the best one' — NOT 'my resume was wrong'"
+      ]
+    },
+    "resume_jane": {
+      "title": "Jane Street Kaggle (if asked)",
+      "bullets": [
+        "That was my first exposure to quantitative finance and time-series modeling.",
+        "I worked on it with a partner — highly competitive, mostly PhD students and quant researchers.",
+        "We built a feature pipeline for predicting stock returns using factor models — momentum, value, quality indicators — essentially linear factor models minimizing squared residuals.",
+        "We didn't place competitively, but the experience was formative — it taught me factor investing fundamentals and time-series feature engineering.",
+        "It actually led directly to my internship at Khaveen Investments, where I applied those exact skills.",
+        "And it motivated us to keep competing on Kaggle, which is how we ended up placing 2nd in the YouTube spam detection competition."
+      ]
+    },
+    "resume_tf": {
+      "title": "TensorFlow bullet (if asked)",
+      "bullets": [
+        "That's part of the CRS project at Scotiabank.",
+        "We used TensorFlow alongside scikit-learn for model benchmarking during the validation phase, comparing supervised and unsupervised approaches on our engineered features."
+      ]
+    },
+    "keeping_uptodate": {
+      "title": "How do you keep up with latest technology?",
+      "bullets": [
+        "I stay close to the research happening around me.",
+        "My multi-agent pipeline project actually started because I read my senior manager's published paper and saw an opportunity to implement it — that's how I taught myself FastAPI, multi-agent orchestration, and React.",
+        "Beyond that, I'm completing my MMA at Rotman which keeps me current on ML techniques.",
+        "I compete on Kaggle which pushes me to learn new approaches like transformer models.",
+        "I recently earned my Azure DP-100 certification.",
+        "And I use platforms like StrataScratch to keep my SQL and Python sharp on a daily basis.",
+        "⚠️ STOP"
+      ]
+    },
+    "prioritization": {
+      "title": "How do you prioritize when you have multiple tasks?",
+      "bullets": [
+        "I prioritize based on who's waiting on my output and what's the business impact.",
+        "At Canadian Heritage, I was running three workstreams simultaneously: the Power BI dashboards, the revenue forecasting model, and the FINTRAC anomaly detection model.",
+        "I prioritized the dashboards first because leadership monitors them every morning — if something breaks, it directly affects their decision-making.",
+        "Second was the revenue forecasting, because the finance team and policy makers were waiting on my numbers to make budget decisions — cross-team dependency.",
+        "Third was the anomaly detection model — that was our data team's own project, a long-term deliverable with no external deadline.",
+        "So my framework is: external dependencies first, cross-team impact second, internal projects third.",
+        "If something is blocking someone else's work, that always goes to the top regardless.",
+        "⚠️ STOP"
+      ]
+    },
+    "risk_mitigation": {
+      "title": "Risk mitigation",
+      "bullets": [
+        "I think about risk at two levels.",
+        "First, project risk — before committing to a technical approach, I validate early. At Scotiabank, before building the full multi-agent pipeline, I ran a proof of concept on a small sample to make sure LLMs could produce usable code at all. If that had failed, I would have known in days instead of weeks.",
+        "Second, delivery risk — I keep stakeholders updated early when something might slip. At Canadian Heritage, when the anomaly detection model was taking longer than expected because the historical data was messier than anticipated, I flagged it to my manager right away rather than trying to absorb the delay silently. We adjusted the timeline together.",
+        "The principle is: validate early, communicate early, and always have a fallback.",
+        "⚠️ STOP"
+      ]
+    }
+  },
+  "my_questions": {
+    "title": "QUESTIONS FOR JAWAD & DOUG — ask at least 2",
+    "items": [
+      "What does a typical project lifecycle look like for someone in this role — from problem scoping through to deployment?",
+      "How does the team collaborate across Toronto and Montreal?",
+      "What qualities do you see in people who thrive on this team?",
+      "What's the most interesting problem the team has worked on recently?"
+    ]
+  }
+}

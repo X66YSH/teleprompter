@@ -10,7 +10,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: #e0e0e0;
     line-height: 1.5;
-    font-size: 15px;
+    font-size: 17px;
     overflow: hidden;
     border-radius: 10px;
     background: transparent;
@@ -59,9 +59,17 @@
     font-size: 12px;
     font-weight: 600;
     flex-shrink: 0;
+    cursor: pointer;
+    user-select: none;
   }
   body.compact .reminders { padding: 5px 8px; font-size: 10px; }
   .reminders div { color: #ff8888; margin: 1px 0; }
+  .reminders.collapsed .reminder-items { display: none; }
+  .reminders .toggle-hint {
+    color: #ff444488;
+    font-size: 10px;
+    text-align: right;
+  }
 
   /* Controls */
   .controls {
@@ -99,35 +107,159 @@
   .scroll-area::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
   body.compact .scroll-area { padding: 6px 8px; }
 
-  .question {
-    margin-bottom: 14px;
-    border-left: 3px solid rgba(15, 52, 96, 0.9);
-    padding-left: 10px;
+  /* Theme grid */
+  .theme-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 12px;
   }
-  body.compact .question { margin-bottom: 8px; padding-left: 6px; }
+  .theme-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    color: #ccc;
+    padding: 8px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s;
+    line-height: 1.3;
+  }
+  .theme-btn:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.25);
+    color: #fff;
+  }
+  .theme-btn.active {
+    background: rgba(74, 168, 100, 0.2);
+    border-color: #4a8;
+    color: #fff;
+  }
+  .theme-btn.behavioral { border-left: 3px solid #e94560; }
+  .theme-btn.intro { border-left: 3px solid #818cf8; }
 
-  .q-title {
-    font-size: 1.1em;
-    font-weight: 700;
+  /* Story panel */
+  .story-panel {
+    display: none;
+    animation: slideIn 0.2s ease-out;
+  }
+  .story-panel.visible { display: block; }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .focus-banner {
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.25), rgba(233, 69, 96, 0.1));
+    border: 1px solid #e94560;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+  }
+  .focus-banner .focus-label {
     color: #e94560;
-    margin-bottom: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
   }
-  .lead { color: #4ade80; font-style: italic; }
-  .warn { color: #ff6b6b; font-weight: 700; }
-  .key { color: #fbbf24; font-weight: 600; }
-  .stop { color: #ff4444; font-weight: 900; text-transform: uppercase; }
+  .focus-banner .focus-text {
+    color: #fbbf24;
+    font-size: 13px;
+    font-weight: 600;
+  }
 
-  ul { padding-left: 16px; margin: 3px 0; }
-  li { margin: 2px 0; }
-  body.compact li { margin: 1px 0; }
+  .story-title {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #4ade80;
+    margin-bottom: 6px;
+  }
+  .story-text {
+    color: #ddd;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
 
+  .panel-actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .panel-actions button {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #aaa;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+  }
+  .panel-actions button:hover { background: rgba(255,255,255,0.15); color: #fff; }
+  .panel-actions .close-panel { color: #ff6b6b; }
+  .panel-actions .backup-btn { color: #818cf8; }
+  .panel-actions .backup-btn.active { background: rgba(129, 140, 248, 0.2); border-color: #818cf8; color: #fff; }
+
+  /* Sections */
   .section-title {
-    font-size: 1.1em;
+    font-size: 1.05em;
     font-weight: 700;
     color: #818cf8;
     margin: 14px 0 6px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     padding-bottom: 3px;
+  }
+  ul { padding-left: 16px; margin: 3px 0; }
+  li { margin: 2px 0; }
+  body.compact li { margin: 1px 0; }
+  .story-bullets li { margin: 5px 0; line-height: 1.5; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 12px 0;
+  }
+
+  /* Collapsible sections */
+  .collapsible-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    padding: 6px 0;
+  }
+  .collapsible-header .arrow {
+    font-size: 10px;
+    color: #666;
+    transition: transform 0.2s;
+  }
+  .collapsible-header.open .arrow { transform: rotate(90deg); }
+  .collapsible-body {
+    display: none;
+  }
+  .collapsible-body.open { display: block; }
+
+  /* Resume deep dive */
+  .deep-dive {
+    margin-top: 6px;
+    border-left: 3px solid rgba(129, 140, 248, 0.4);
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+  .deep-dive .dd-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #818cf8;
+    margin-bottom: 3px;
+  }
+  .deep-dive .dd-text {
+    font-size: 13px;
+    color: #bbb;
+    line-height: 1.5;
   }
 </style>
 </head>
@@ -140,7 +272,7 @@
     <button class="close-btn" onclick="window.close()" title="Close">&times;</button>
   </div>
 
-  <div class="reminders" id="reminders"></div>
+  <div class="reminders" id="reminders" onclick="toggleReminders()"></div>
 
   <div class="controls">
     <label>Opacity</label>
@@ -153,6 +285,10 @@
 </div>
 
 <script>
+  let DATA = null;
+  let activeTheme = null;
+  let showingBackup = false;
+
   const opSlider = document.getElementById('opacity');
   const opVal = document.getElementById('opVal');
   const shell = document.getElementById('shell');
@@ -168,38 +304,153 @@
     document.getElementById('compactBtn').classList.toggle('active');
   }
 
+  function toggleReminders() {
+    document.getElementById('reminders').classList.toggle('collapsed');
+  }
+
   function escHtml(s) {
+    if (!s) return '';
     const d = document.createElement('div');
     d.textContent = s;
     return d.innerHTML;
   }
 
-  function render(data) {
-    // Reminders
+  function renderReminders(reminders) {
     const rem = document.getElementById('reminders');
-    rem.innerHTML = data.reminders.map(r => `<div>\u26a0\ufe0f ${escHtml(r)}</div>`).join('');
-
-    // Questions
-    const content = document.getElementById('content');
-    let html = '';
-    for (const q of data.questions) {
-      html += `<div class="question"><div class="q-title">${escHtml(q.title)}</div><p>${escHtml(q.text)}</p></div>`;
-    }
-
-    // Extra sections
-    for (const s of data.sections || []) {
-      html += `<div class="section-title">${escHtml(s.title)}</div><ul>${s.items.map(i => `<li>${escHtml(i)}</li>`).join('')}</ul>`;
-    }
-
-    content.innerHTML = html;
+    rem.innerHTML = `<div class="reminder-items">${reminders.map(r => `<div>\u26a0\ufe0f ${escHtml(r)}</div>`).join('')}</div><div class="toggle-hint">click to collapse/expand</div>`;
   }
 
-  fetch('content.json')
-    .then(r => r.json())
-    .then(render)
-    .catch(e => {
-      document.getElementById('content').innerHTML = `<p style="color:#ff4444;padding:12px">Failed to load content.json: ${e.message}</p>`;
+  function isIntroTheme(theme) {
+    return !theme.focus;
+  }
+
+  function selectTheme(idx) {
+    showingBackup = false;
+    if (activeTheme === idx) {
+      activeTheme = null;
+    } else {
+      activeTheme = idx;
+    }
+    renderContent();
+    if (activeTheme !== null) {
+      const panel = document.querySelector('.story-panel');
+      if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function toggleBackup() {
+    showingBackup = !showingBackup;
+    renderContent();
+  }
+
+  function toggleSection(id, headerEl) {
+    const body = document.getElementById(id);
+    body.classList.toggle('open');
+    headerEl.classList.toggle('open');
+  }
+
+  function closePanel() {
+    activeTheme = null;
+    showingBackup = false;
+    renderContent();
+  }
+
+  function renderContent() {
+    const el = document.getElementById('content');
+    let html = '';
+
+    // Theme grid
+    html += '<div class="theme-grid">';
+    DATA.themes.forEach((t, i) => {
+      const cls = isIntroTheme(t) ? 'intro' : 'behavioral';
+      const active = activeTheme === i ? ' active' : '';
+      html += `<button class="theme-btn ${cls}${active}" onclick="selectTheme(${i})">${escHtml(t.label)}</button>`;
     });
+    html += '</div>';
+
+    // Story panel
+    if (activeTheme !== null) {
+      const theme = DATA.themes[activeTheme];
+      const storyKey = showingBackup && theme.backup_story ? theme.backup_story : theme.primary_story;
+      const story = DATA.stories[storyKey];
+
+      html += '<div class="story-panel visible">';
+
+      // Focus banner
+      if (theme.focus) {
+        html += `<div class="focus-banner"><div class="focus-label">\u25ce Focus for this question</div><div class="focus-text">${escHtml(theme.focus)}</div></div>`;
+      }
+
+      // Actions
+      html += '<div class="panel-actions">';
+      html += `<button class="close-panel" onclick="closePanel()">\u2715 Close</button>`;
+      if (theme.backup_story) {
+        const bActive = showingBackup ? ' active' : '';
+        const bLabel = showingBackup ? '\u25c0 Primary story' : '\u25b6 Backup story';
+        html += `<button class="backup-btn${bActive}" onclick="toggleBackup()">${bLabel}</button>`;
+      }
+      html += '</div>';
+
+      // Story content
+      if (story) {
+        html += `<div class="story-title">${escHtml(story.title)}</div>`;
+        if (story.use_for) {
+          html += `<div style="color:#888;font-size:11px;margin-bottom:6px">Use for: ${escHtml(story.use_for)}</div>`;
+        }
+        if (story.full_text) {
+          html += `<div class="story-text">${escHtml(story.full_text)}</div>`;
+        }
+        // STAR format
+        const starFields = [
+          ['situation', 'S — Situation', '#4ade80'],
+          ['task', 'T — Task', '#60a5fa'],
+          ['action', 'A — Action', '#fbbf24'],
+          ['result', 'R — Result', '#f472b6']
+        ];
+        for (const [key, label, color] of starFields) {
+          if (story[key]) {
+            html += `<div style="margin:6px 0"><span style="color:${color};font-weight:700;font-size:12px">${label}</span><div class="story-text" style="margin-top:2px">${escHtml(story[key])}</div></div>`;
+          }
+        }
+        if (story.bullets) {
+          html += '<ul class="story-bullets">' + story.bullets.map(b => {
+            let style = '';
+            if (b.startsWith('[SITUATION]')) style = 'color:#4ade80';
+            else if (b.startsWith('[TASK]')) style = 'color:#60a5fa';
+            else if (b.startsWith('[ACTION]')) style = 'color:#fbbf24';
+            else if (b.startsWith('[RESULT]')) style = 'color:#f472b6;font-weight:700';
+            else if (b.includes('\u26a0')) style = 'color:#ff6b6b;font-weight:700;font-style:italic';
+            else if (b.includes('\u2b50')) style = 'color:#fcd34d;font-weight:600';
+            return `<li${style ? ` style="${style}"` : ''}>${escHtml(b)}</li>`;
+          }).join('') + '</ul>';
+        }
+      }
+
+      html += '</div>';
+    }
+
+    // Divider
+    html += '<hr class="divider">';
+
+    // My questions (collapsible)
+    if (DATA.my_questions) {
+      html += `<div class="collapsible-header" onclick="toggleSection('myqs', this)"><div class="section-title" style="margin:0">${escHtml(DATA.my_questions.title)}</div><span class="arrow">\u25b6</span></div>`;
+      html += `<div class="collapsible-body" id="myqs"><ul>${DATA.my_questions.items.map(i => `<li>${escHtml(i)}</li>`).join('')}</ul></div>`;
+    }
+
+    el.innerHTML = html;
+  }
+
+  try {
+    const fs = require('fs');
+    const path = require('path');
+    const raw = fs.readFileSync(path.join(__dirname, 'content.json'), 'utf-8');
+    DATA = JSON.parse(raw);
+    renderReminders(DATA.reminders);
+    renderContent();
+  } catch (e) {
+    document.getElementById('content').innerHTML = `<p style="color:#ff4444;padding:12px">Failed to load content.json: ${e.message}</p>`;
+  }
 </script>
 </body>
 </html>
