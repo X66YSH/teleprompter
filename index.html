@@ -444,12 +444,14 @@
   try {
     const fs = require('fs');
     const path = require('path');
-    const raw = fs.readFileSync(path.join(__dirname, 'content.json'), 'utf-8');
+    const profile = location.hash.replace(/^#/, '');
+    const filename = profile ? `content_${profile}.json` : 'content.json';
+    const raw = fs.readFileSync(path.join(__dirname, filename), 'utf-8');
     DATA = JSON.parse(raw);
     renderReminders(DATA.reminders);
     renderContent();
   } catch (e) {
-    document.getElementById('content').innerHTML = `<p style="color:#ff4444;padding:12px">Failed to load content.json: ${e.message}</p>`;
+    document.getElementById('content').innerHTML = `<p style="color:#ff4444;padding:12px">Failed to load content file: ${e.message}</p>`;
   }
 </script>
 </body>

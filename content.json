@@ -224,14 +224,44 @@
       "backup_story": null
     },
     {
-      "label": "Prioritization / multitasking",
-      "primary_story": "prioritization",
+      "label": "Power BI dashboards (resume)",
+      "primary_story": "resume_powerbi",
       "focus": null,
       "backup_story": null
     },
     {
-      "label": "Risk mitigation",
-      "primary_story": "risk_mitigation",
+      "label": "AML → Retail Banking gap",
+      "primary_story": "domain_gap",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "S2 (base)",
+      "primary_story": "S2_base",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "Databricks (resume/follow-up)",
+      "primary_story": "resume_databricks",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "TD business model / revenue",
+      "primary_story": "td_business_model",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "S5 technical follow-ups",
+      "primary_story": "S5_followups",
+      "focus": null,
+      "backup_story": null
+    },
+    {
+      "label": "S6 technical follow-ups",
+      "primary_story": "S6_followups",
       "focus": null,
       "backup_story": null
     }
@@ -681,6 +711,121 @@
         "Second, delivery risk — I keep stakeholders updated early when something might slip. At Canadian Heritage, when the anomaly detection model was taking longer than expected because the historical data was messier than anticipated, I flagged it to my manager right away rather than trying to absorb the delay silently. We adjusted the timeline together.",
         "The principle is: validate early, communicate early, and always have a fallback.",
         "⚠️ STOP"
+      ]
+    },
+    "resume_powerbi": {
+      "title": "Power BI Dashboards (resume deep dive)",
+      "bullets": [
+        "I own three Power BI pipelines at Canadian Heritage: operational dashboard, revenue dashboard, and the monthly master report.",
+        "[PIPELINE] The data flows end-to-end automatically: scheduled extraction from our SQL database → CSV output to a shared directory → Power BI auto-refreshes at 5:30 AM every morning → publishes through Microsoft Fabric — all before leadership checks at 6 AM.",
+        "[OPERATIONAL DASHBOARD] Tracks case volume metrics: cases received, cases analyzed, broken down by program and distribution. Includes month-over-month and year-over-year trend views with slicers. Primary focus is backlog monitoring — how many cases are waiting, how long they've been waiting.",
+        "[REVENUE DASHBOARD] Similar structure but focused on financial metrics: annual revenue, monthly revenue by program, and most importantly, projected revenue. I hard-coded our revenue projection algorithm directly into Power BI using DAX — so leadership sees not just where we are, but where we're heading for long-term planning.",
+        "[MONTHLY MASTER REPORT] Extracts the key metrics from both dashboards, but we manually review the numbers each month and add our interpretation, key insights, and headlines — if something significant happened that month, we flag it for leadership.",
+        "[HOW I DECIDED KPIS] The operational metrics came from what the leadership team was already tracking manually — I automated what they were doing by hand. The projected revenue was my addition — I proposed integrating the forecasting model into the dashboard so leadership could see actuals versus projections in one view, rather than waiting for a separate report.",
+        "(⭐ IF ASKED HOW DASHBOARDS INFLUENCED DECISIONS) The revenue dashboard serves the Financial Leadership Team and the Deputy Director General — they use it to monitor performance and report up to the Minister. On the operational side, the backlog dashboard surfaced a growing bottleneck in case processing, which directly led to my Track F project — the XGBoost anomaly detection model that automated 98% of manual reviews. So the dashboard didn't just report a problem, it triggered the solution.",
+        "⚠️ STOP"
+      ]
+    },
+    "domain_gap": {
+      "title": "AML → Retail Banking Domain Gap (fit question)",
+      "bullets": [
+        "You're right that my direct experience is in AML and compliance, not retail banking.",
+        "But the analytical patterns are very similar: customer segmentation, behavioral scoring, feature engineering on transactional data, building models that feed into business decisions — I'm doing all of that at Scotiabank, just in the AML context.",
+        "The difference is the business question: instead of 'is this customer suspicious,' it's 'is this customer likely to churn' or 'which product should we cross-sell.' The tools, the data structures, and the analytical thinking transfer directly.",
+        "Same with my Power BI work at Canadian Heritage — I'm building dashboards for leadership that track operational metrics and projected revenue, presenting monthly reports, and translating data into business recommendations. That stakeholder communication piece is the same regardless of the domain.",
+        "And frankly, that's part of why I'm excited about this role — I want to apply these same skills to customer-facing problems at TD's scale, where I can see the direct business impact across 27 million customers.",
+        "⚠️ STOP — don't over-explain, this is a confidence answer not an apology"
+      ]
+    },
+    "S2_base": {
+      "title": "S2: Orange EV Pipeline — FULL BASE VERSION",
+      "bullets": [
+        "[SITUATION] At Orange Business Services, our client was a leading global EV manufacturer using our IoT connectivity service.",
+        "The service generated massive multi-gigabyte CSV files. Their billing process was broken — trying to use Excel, preventing accurate invoicing.",
+        "[TASK] I was tasked with solving this data processing bottleneck — designing an automated system for accurate usage-based client invoicing.",
+        "[ACTION] I moved the entire workflow from desktop tools to a scalable server-side environment.",
+        "I engineered an end-to-end pipeline using Python and SQL: auto-ingestion → cleaning → aggregation → usage-based billing metrics.",
+        "[RESULT] Fixed the revenue cycle issue, enabled accurate invoicing.",
+        "Client placed a follow-up order for 100,000 additional IoT units."
+      ]
+    },
+    "resume_databricks": {
+      "title": "Databricks (if asked / follow-up)",
+      "bullets": [
+        "I work with PySpark daily on Spark clusters at Scotiabank, and I hold my Azure DP-100 certification, so I am familiar with the Azure ecosystem.",
+        "Databricks is built on the same Spark engine and runs on Azure — the core data manipulation transfers directly. I am building up the platform-specific knowledge through DataCamp.",
+        "(⭐ IF ASKED WHAT SPECIFICALLY) So far I have been focusing on the data layer — Delta Lake adds ACID transactions and version control on top of a data lake, so your data is reliable and you can roll back if something goes wrong.",
+        "I have also been learning about Unity Catalog for data governance — controlling who can access what data, which is critical in banking.",
+        "And MLflow for experiment tracking — logging which model, which parameters, which performance metrics, so you have a full audit trail from experiment to production.",
+        "⚠️ Don't fake deep expertise — show momentum + PySpark foundation + Azure cert"
+      ]
+    },
+    "td_business_model": {
+      "title": "TD Business Model / Revenue (if asked)",
+      "bullets": [
+        "TD makes money through three main streams:",
+        "1. Net Interest Income — the spread between what TD charges on loans and mortgages versus what it pays on deposits. This is the biggest revenue driver. When someone gets a TD mortgage at 5% and TD pays 3% on savings accounts, that 2% spread is profit.",
+        "2. Non-Interest Income — fees: credit card interchange fees, wealth management fees, insurance premiums, advisory fees, transaction fees.",
+        "3. Trading Revenue — smaller piece, more on the wholesale banking side.",
+        "Cost of funds = what TD pays to attract deposits. When interest rates go up, cost of funds go up too, which squeezes the spread.",
+        "(⭐ CONNECT TO THIS ROLE) The AI Squared team sits in retail banking — our job is to use data to help TD on three levers: grow revenue (cross-sell, acquisition, onboarding), reduce costs (automation, efficiency), and retain customers (churn prevention, engagement). Every model we build should connect back to one of those three.",
+        "(⭐ NICE-TO-HAVE ON JD) The nice-to-have literally lists: customer analytics in financial services — engagement, onboarding, cross-sell, retention, productivity insights. That is exactly what this team does day to day.",
+        "⚠️ Keep it concise — show you understand the business, don't lecture on banking 101"
+      ]
+    },
+    "S5_followups": {
+      "title": "S5 S2A — Technical Follow-Up Q&A",
+      "bullets": [
+        "(Q: Why 6 agents instead of one LLM?)",
+        "Each agent is specialized for one step — Regulatory Analyst reads the document, Schema Adapter maps to our data, Feature Engineer writes Python code, Deterministic Validator checks syntax and types, Isolation Forest runs detection, RCC Verifier checks alerts against original regulation.",
+        "Separated because each step has different failure modes. I can pinpoint exactly where the pipeline fails and retry only that step, not the whole thing.",
+        "",
+        "(Q: Explain the reinforcement learning component.)",
+        "⚠️ CAREFUL — correct the framing",
+        "To clarify — the current implementation uses a structured self-correction loop, not true reinforcement learning. When the validator catches errors, it sends structured feedback back to the engineer agent for retry. That is deterministic feedback, not RL.",
+        "The reinforcement learning component is Phase 2 — once we have enough logged iterations from the team using the platform, we will have the data to train a reward model that optimizes generation quality over time. We are in the data collection stage for that now.",
+        "",
+        "(Q: Only 1.5% AUC improvement — why is that significant?)",
+        "The baseline model already had 90% AUC with hundreds of manually engineered features built over years.",
+        "A 1.5 point improvement from a single auto-generated feature shows the platform can discover signal that human experts missed.",
+        "The real value is not one feature — it is that the platform can generate and test hundreds of features in minutes instead of days. We are scaling it across multiple regulatory scenarios now.",
+        "",
+        "(Q: What would you change if you rebuilt it?)",
+        "Three things. First, stronger statistical tests in the validator beyond IV and KS — my director flagged this.",
+        "Second, build a feedback storage layer from day one so we collect data for the RL phase faster — that was an afterthought in v1.",
+        "Third, add automated A/B comparison between agent-generated and manually engineered features so we can continuously benchmark quality without human review.",
+        "",
+        "(Q: What metrics did you use for feature quality?)",
+        "Three checks in the validator. First, AST safety — make sure the LLM did not import dangerous libraries like OS that could override or delete data.",
+        "Second, column alignment — verify the generated code only references columns that actually exist in our data schema.",
+        "Third, predictive power — KS statistic and Information Value. If IV falls below our threshold, the self-correction loop triggers and sends the work back to the engineer or analyst agent to regenerate."
+      ]
+    },
+    "S6_followups": {
+      "title": "S6 CRS — Technical Follow-Up Q&A",
+      "bullets": [
+        "(Q: What is the difference between CRR and CRS?)",
+        "CRR is the existing system — classifies customers based on static KYC attributes at account opening. Age, profession, location, home address. But it does not capture what the customer is actually doing.",
+        "CRS is what I am building — scores customers 0-100 based on transactional behavior. A customer making transactions at 3 AM or suddenly receiving money from 10 different people in one day — CRR misses that, CRS catches it.",
+        "",
+        "(Q: Why PySpark instead of Pandas?)",
+        "Millions of rows across six FINTRAC transaction channels. Does not fit in memory on a single machine. PySpark distributes the processing across a cluster.",
+        "I prototyped in Pandas first, then translated to PySpark for production scale.",
+        "",
+        "(Q: What is DWT and why did you choose it over rolling windows?)",
+        "Discrete Wavelet Transform. It decomposes a time series into both high-frequency components (sudden spikes in activity) and low-frequency components (gradual behavioral trends).",
+        "Rolling windows can capture trends but they collapse customer-level granularity — you lose the individual signal. DWT preserves both.",
+        "My senior manager Phume evaluated three approaches from the team and selected mine.",
+        "",
+        "(Q: What were the strongest features?)",
+        "Network features had the highest impact — fan-in and fan-out patterns. Fan-in means many accounts sending money to one account. Fan-out means one account distributing to many.",
+        "These patterns directly map to money laundering typologies.",
+        "We had six feature dimensions total: amount, temporal, channel, geographic, network, and currency.",
+        "",
+        "(Q: How did the team dynamic work?)",
+        "Team of three. I led feature engineering and proposed the DWT approach.",
+        "Phume evaluated all three of our approaches and selected mine.",
+        "We divided the six feature dimensions across the team, but I owned the methodology and the Pandas-to-PySpark translation."
       ]
     }
   },
