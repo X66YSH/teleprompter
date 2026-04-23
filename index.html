@@ -51,26 +51,6 @@
   }
   .titlebar .close-btn:hover { color: #ff4444; }
 
-  /* Reminders */
-  .reminders {
-    background: rgba(50, 20, 20, 0.95);
-    border-bottom: 2px solid #ff4444;
-    padding: 8px 12px;
-    font-size: 12px;
-    font-weight: 600;
-    flex-shrink: 0;
-    cursor: pointer;
-    user-select: none;
-  }
-  body.compact .reminders { padding: 5px 8px; font-size: 10px; }
-  .reminders div { color: #ff8888; margin: 1px 0; }
-  .reminders.collapsed .reminder-items { display: none; }
-  .reminders .toggle-hint {
-    color: #ff444488;
-    font-size: 10px;
-    text-align: right;
-  }
-
   /* Controls */
   .controls {
     background: rgba(0,0,0,0.3);
@@ -261,6 +241,32 @@
     color: #bbb;
     line-height: 1.5;
   }
+
+  /* Tab bar */
+  .tab-bar {
+    display: flex;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.2);
+    flex-shrink: 0;
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .tab-btn:hover { color: #ccc; background: rgba(255,255,255,0.03); }
+  .tab-btn.active {
+    color: #fff;
+    border-bottom-color: #818cf8;
+    background: rgba(129,140,248,0.1);
+  }
 </style>
 </head>
 <body>
@@ -272,7 +278,7 @@
     <button class="close-btn" onclick="window.close()" title="Close">&times;</button>
   </div>
 
-  <div class="reminders" id="reminders" onclick="toggleReminders()"></div>
+  <div class="tab-bar" id="tabBar"></div>
 
   <div class="controls">
     <label>Opacity</label>
@@ -286,8 +292,31 @@
 
 <script>
   let DATA = null;
+  let TAB = null;
+  let activeTabIdx = 0;
   let activeTheme = null;
   let showingBackup = false;
+
+  function renderTabBar() {
+    const bar = document.getElementById('tabBar');
+    if (!DATA.tabs || DATA.tabs.length < 2) {
+      bar.style.display = 'none';
+      return;
+    }
+    bar.style.display = 'flex';
+    bar.innerHTML = DATA.tabs.map((t, i) =>
+      `<button class="tab-btn${i === activeTabIdx ? ' active' : ''}" onclick="switchTab(${i})">${escHtml(t.label)}</button>`
+    ).join('');
+  }
+
+  function switchTab(idx) {
+    activeTabIdx = idx;
+    TAB = DATA.tabs ? DATA.tabs[idx] : DATA;
+    activeTheme = null;
+    showingBackup = false;
+    renderTabBar();
+    renderContent();
+  }
 
   const opSlider = document.getElementById('opacity');
   const opVal = document.getElementById('opVal');
@@ -304,20 +333,12 @@
     document.getElementById('compactBtn').classList.toggle('active');
   }
 
-  function toggleReminders() {
-    document.getElementById('reminders').classList.toggle('collapsed');
-  }
 
   function escHtml(s) {
     if (!s) return '';
     const d = document.createElement('div');
     d.textContent = s;
     return d.innerHTML;
-  }
-
-  function renderReminders(reminders) {
-    const rem = document.getElementById('reminders');
-    rem.innerHTML = `<div class="reminder-items">${reminders.map(r => `<div>\u26a0\ufe0f ${escHtml(r)}</div>`).join('')}</div><div class="toggle-hint">click to collapse/expand</div>`;
   }
 
   function isIntroTheme(theme) {
@@ -357,11 +378,13 @@
 
   function renderContent() {
     const el = document.getElementById('content');
+    const themes = TAB.themes || [];
+    const stories = TAB.stories || {};
     let html = '';
 
     // Theme grid
     html += '<div class="theme-grid">';
-    DATA.themes.forEach((t, i) => {
+    themes.forEach((t, i) => {
       const cls = isIntroTheme(t) ? 'intro' : 'behavioral';
       const active = activeTheme === i ? ' active' : '';
       html += `<button class="theme-btn ${cls}${active}" onclick="selectTheme(${i})">${escHtml(t.label)}</button>`;
@@ -370,9 +393,9 @@
 
     // Story panel
     if (activeTheme !== null) {
-      const theme = DATA.themes[activeTheme];
+      const theme = themes[activeTheme];
       const storyKey = showingBackup && theme.backup_story ? theme.backup_story : theme.primary_story;
-      const story = DATA.stories[storyKey];
+      const story = stories[storyKey];
 
       html += '<div class="story-panel visible">';
 
@@ -429,13 +452,11 @@
       html += '</div>';
     }
 
-    // Divider
-    html += '<hr class="divider">';
-
-    // My questions (collapsible)
-    if (DATA.my_questions) {
-      html += `<div class="collapsible-header" onclick="toggleSection('myqs', this)"><div class="section-title" style="margin:0">${escHtml(DATA.my_questions.title)}</div><span class="arrow">\u25b6</span></div>`;
-      html += `<div class="collapsible-body" id="myqs"><ul>${DATA.my_questions.items.map(i => `<li>${escHtml(i)}</li>`).join('')}</ul></div>`;
+    // My questions (only if present on active tab)
+    if (TAB.my_questions) {
+      html += '<hr class="divider">';
+      html += `<div class="collapsible-header" onclick="toggleSection('myqs', this)"><div class="section-title" style="margin:0">${escHtml(TAB.my_questions.title)}</div><span class="arrow">\u25b6</span></div>`;
+      html += `<div class="collapsible-body" id="myqs"><ul>${TAB.my_questions.items.map(i => `<li>${escHtml(i)}</li>`).join('')}</ul></div>`;
     }
 
     el.innerHTML = html;
@@ -444,12 +465,13 @@
   try {
     const fs = require('fs');
     const path = require('path');
-    const profile = location.hash.replace(/^#/, '');
-    const filename = profile ? `content_${profile}.json` : 'content.json';
-    const raw = fs.readFileSync(path.join(__dirname, filename), 'utf-8');
+    const raw = fs.readFileSync(path.join(__dirname, 'content.json'), 'utf-8');
     DATA = JSON.parse(raw);
-    renderReminders(DATA.reminders);
-    renderContent();
+    // Backward compat: wrap flat structure into single synthetic tab
+    if (!DATA.tabs) {
+      DATA = { tabs: [{ id: 'main', label: 'Main', themes: DATA.themes, stories: DATA.stories, my_questions: DATA.my_questions }] };
+    }
+    switchTab(0);
   } catch (e) {
     document.getElementById('content').innerHTML = `<p style="color:#ff4444;padding:12px">Failed to load content file: ${e.message}</p>`;
   }

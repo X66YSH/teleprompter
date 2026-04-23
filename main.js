@@ -22,9 +22,7 @@ app.whenReady().then(() => {
     }
   });
 
-  const profileArg = process.argv.find(a => a.startsWith('--profile='));
-  const profile = profileArg ? profileArg.split('=')[1] : '';
-  win.loadFile('index.html', { hash: profile });
+  win.loadFile('index.html');
   win.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
   win.setAlwaysOnTop(true, 'floating', 1);
 });
