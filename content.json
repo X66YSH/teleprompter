@@ -120,174 +120,6 @@
           "primary_story": "S1_trust",
           "focus": "Manager's directive was specifically to maximize accuracy to build trust and ensure adoption. 99.7% earned that trust. For interpersonal angle, use S4: earned endorsement through consistent improvement.",
           "backup_story": "S4"
-        },
-        {
-          "label": "Walk me through background",
-          "primary_story": "intro_background",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Why RBC / Why this role?",
-          "primary_story": "intro_why_rbc",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Why Model Validation (not building)?",
-          "primary_story": "intro_why_mv",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Why leaving Scotiabank?",
-          "primary_story": "intro_leaving",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Career goals",
-          "primary_story": "intro_goals",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Weakness",
-          "primary_story": "weakness",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Strength",
-          "primary_story": "strength",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "5 years experience gap",
-          "primary_story": "intro_gap",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Compensation",
-          "primary_story": "intro_comp",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Other offers",
-          "primary_story": "intro_offers",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "What do you know about RBC / GRM / EMRM?",
-          "primary_story": "intro_know_rbc",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Why data science?",
-          "primary_story": "intro_why_ds",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Cross-functional experience",
-          "primary_story": "intro_cross",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Anything else?",
-          "primary_story": "intro_anything",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Revenue forecasting (resume)",
-          "primary_story": "resume_arima",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Jane Street (resume)",
-          "primary_story": "resume_jane",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "TensorFlow (resume)",
-          "primary_story": "resume_tf",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Keeping up with technology",
-          "primary_story": "keeping_uptodate",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Power BI dashboards (resume)",
-          "primary_story": "resume_powerbi",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "AML → Credit Risk gap (honest bridge)",
-          "primary_story": "domain_gap",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Wholesale vs Retail bridge (Derek hook)",
-          "primary_story": "wholesale_retail",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "S2 (base)",
-          "primary_story": "S2_base",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Databricks (resume/follow-up)",
-          "primary_story": "resume_databricks",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "S5 technical follow-ups",
-          "primary_story": "S5_followups",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "S6 technical follow-ups",
-          "primary_story": "S6_followups",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "KING Q — ask Derek about his Wholesale → MV shift",
-          "primary_story": "ask_derek_king",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Other Qs to ask Derek",
-          "primary_story": "ask_derek_other",
-          "focus": null,
-          "backup_story": null
-        },
-        {
-          "label": "Thank-you email template",
-          "primary_story": "thankyou_email",
-          "focus": null,
-          "backup_story": null
         }
       ],
       "stories": {
@@ -555,6 +387,357 @@
             "⚠️ STOP HERE"
           ]
         },
+        "prioritization": {
+          "title": "How do you prioritize when you have multiple tasks?",
+          "bullets": [
+            "I prioritize based on who's waiting on my output and what's the business impact.",
+            "At Canadian Heritage, I was running three workstreams simultaneously: the Power BI dashboards, the revenue forecasting model, and the FINTRAC anomaly detection model.",
+            "I prioritized the dashboards first because leadership monitors them every morning — if something breaks, it directly affects their decision-making.",
+            "Second was the revenue forecasting, because the finance team and policy makers were waiting on my numbers to make budget decisions — cross-team dependency.",
+            "Third was the anomaly detection model — that was our data team's own project, a long-term deliverable with no external deadline.",
+            "So my framework is: external dependencies first, cross-team impact second, internal projects third.",
+            "If something is blocking someone else's work, that always goes to the top regardless.",
+            "⚠️ STOP"
+          ]
+        },
+        "risk_mitigation": {
+          "title": "Risk mitigation",
+          "bullets": [
+            "I think about risk at two levels.",
+            "First, project risk — before committing to a technical approach, I validate early. At Scotiabank, before building the full multi-agent pipeline, I ran a proof of concept on a small sample to make sure LLMs could produce usable code at all. If that had failed, I would have known in days instead of weeks.",
+            "Second, delivery risk — I keep stakeholders updated early when something might slip. At Canadian Heritage, when the anomaly detection model was taking longer than expected because the historical data was messier than anticipated, I flagged it to my manager right away rather than trying to absorb the delay silently. We adjusted the timeline together.",
+            "The principle is: validate early, communicate early, and always have a fallback.",
+            "⚠️ STOP"
+          ]
+        }
+      },
+      "my_questions": {
+        "title": "QUESTIONS FOR DEREK — ask the KING Q + 1-2 others",
+        "items": [
+          "[KING] You spent 6+ years in Wholesale Credit before moving to EMRM about two years ago. What's been the biggest mindset shift for you — from doing credit analysis to validating the same types of models?",
+          "How does EMRM balance quant-heavy directors with business-focused leaders like yourself? I imagine the challenge is getting both lenses on every validation.",
+          "How is EMRM thinking about ML and AI model validation as the industry evolves? I noticed RBC has a dedicated AI Model Risk director.",
+          "You hold CFA, CPA, and CFP — for someone at my stage finishing MMA, would you see FRM as a natural next designation?",
+          "What distinguishes a great Senior Analyst on this team from a solid one? What predicts who grows fastest?"
+        ]
+      }
+    },
+    {
+      "id": "general_resume",
+      "label": "General + Resume",
+      "reminders": [
+        "Blue variants: intro questions, resume deep-dives, Derek prep, bridge topics",
+        "Resume bullets are ordered top-to-bottom by resume order",
+        "STAR stories (S1/S3/S4/S5/S6) are reused here for resume bullets — same content, different entry point"
+      ],
+      "themes": [
+        {
+          "label": "Walk me through background",
+          "primary_story": "intro_background",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Why RBC / Why this role?",
+          "primary_story": "intro_why_rbc",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Master Pitch (Why role / Why MV / Why now)",
+          "primary_story": "intro_master_pitch",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Why Model Validation (not building)?",
+          "primary_story": "intro_why_mv",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Why leaving Scotiabank?",
+          "primary_story": "intro_leaving",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Career goals",
+          "primary_story": "intro_goals",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Weakness",
+          "primary_story": "weakness",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Strength",
+          "primary_story": "strength",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "5 years experience gap",
+          "primary_story": "intro_gap",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Compensation",
+          "primary_story": "intro_comp",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Other offers",
+          "primary_story": "intro_offers",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "What do you know about RBC / GRM / EMRM?",
+          "primary_story": "intro_know_rbc",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Why data science?",
+          "primary_story": "intro_why_ds",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Cross-functional experience",
+          "primary_story": "intro_cross",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Anything else?",
+          "primary_story": "intro_anything",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Keeping up with technology",
+          "primary_story": "keeping_uptodate",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "AML → Credit Risk gap (honest bridge)",
+          "primary_story": "domain_gap",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "Wholesale vs Retail bridge (Derek hook)",
+          "primary_story": "wholesale_retail",
+          "focus": null,
+          "backup_story": null,
+          "group": "General & Career"
+        },
+        {
+          "label": "AML pipeline (resume)",
+          "primary_story": "S5_challenge",
+          "focus": null,
+          "backup_story": null,
+          "group": "Resume Deep-Dives"
+        },
+        {
+          "label": "Customer Risk Score / CRS (resume)",
+          "primary_story": "S6_teamwork",
+          "focus": null,
+          "backup_story": null,
+          "group": "Resume Deep-Dives"
+        },
+        {
+          "label": "TensorFlow (resume)",
+          "primary_story": "resume_tf",
+          "focus": null,
+          "backup_story": null,
+          "group": "Resume Deep-Dives"
+        },
+        {
+          "label": "XGBoost CAVCO (resume)",
+          "primary_story": "S1_deadline",
+          "focus": null,
+          "backup_story": null,
+          "group": "Resume Deep-Dives"
+        },
+        {
+          "label": "Power BI dashboards (resume)",
+          "primary_story": "resume_powerbi",
+          "focus": null,
+          "backup_story": null,
+          "group": "Resume Deep-Dives"
+        },
+        {
+          "label": "Revenue forecasting (resume)",
+          "primary_story": "resume_arima",
+          "focus": null,
+          "backup_story": null,
+          "group": "Resume Deep-Dives"
+        },
+        {
+          "label": "Khaveen stock pitch (resume)",
+          "primary_story": "S4",
+          "focus": null,
+          "backup_story": null,
+          "group": "Resume Deep-Dives"
+        },
+        {
+          "label": "Orange EV pipeline (resume)",
+          "primary_story": "S2_base",
+          "focus": null,
+          "backup_story": null,
+          "group": "Resume Deep-Dives"
+        },
+        {
+          "label": "Kaggle YouTube spam NLP (resume)",
+          "primary_story": "S3",
+          "focus": null,
+          "backup_story": null,
+          "group": "Resume Deep-Dives"
+        },
+        {
+          "label": "Jane Street (resume)",
+          "primary_story": "resume_jane",
+          "focus": null,
+          "backup_story": null,
+          "group": "Resume Deep-Dives"
+        },
+        {
+          "label": "S5 technical follow-ups",
+          "primary_story": "S5_followups",
+          "focus": null,
+          "backup_story": null,
+          "group": "Derek Prep"
+        },
+        {
+          "label": "S6 technical follow-ups",
+          "primary_story": "S6_followups",
+          "focus": null,
+          "backup_story": null,
+          "group": "Derek Prep"
+        },
+        {
+          "label": "KING Q — ask Derek about his Wholesale → MV shift",
+          "primary_story": "ask_derek_king",
+          "focus": null,
+          "backup_story": null,
+          "group": "Derek Prep"
+        },
+        {
+          "label": "Other Qs to ask Derek",
+          "primary_story": "ask_derek_other",
+          "focus": null,
+          "backup_story": null,
+          "group": "Derek Prep"
+        }
+      ],
+      "stories": {
+        "S5_challenge": {
+          "title": "S5 → Challenging Project",
+          "bullets": [
+            "⚠️ LEAD WITH THE CHALLENGE STATEMENT — not 3 minutes of background",
+            "[SITUATION] At Scotiabank, AML feature engineering is a major bottleneck — translating FINTRAC regulatory documents into executable detection features takes days of manual work by experts who understand both compliance and data schemas.",
+            "My senior manager Phume had published a research paper proposing a multi-agent LLM architecture to solve this, but there was no working implementation.",
+            "I took the initiative to build the full system from scratch as an independent research project, on top of my regular responsibilities.",
+            "[TASK — THE CHALLENGE] The biggest challenge was making LLMs produce production-quality code reliably — getting consistent, validated output from a non-deterministic system. That's fundamentally hard because every time you call the model, you can get a slightly different answer.",
+            "[ACTION] To solve this, I designed and built the entire platform end-to-end: a FastAPI backend with 6 specialized AI agents, each following a Perceive-Reason-Act loop.",
+            "The pipeline reads regulatory text, adapts to the target database schema, generates Python feature code, validates it through deterministic checks, runs Isolation Forest anomaly detection, and verifies each alert against the same regulatory text — closing the loop with full traceability.",
+            "The key to solving the reliability challenge was the self-correction loop: when the Validator catches errors — missing columns, type mismatches, empty outputs — it feeds structured feedback back to the Engineer agent for automatic retry, up to 5 iterations. This is what makes the system reliable despite LLMs being non-deterministic.",
+            "⚠️ SAY 'self-correction loop with structured feedback' — NOT 'reinforcement learning'",
+            "I also built a React frontend so the team can monitor each agent working in real time.",
+            "[RESULT] The pipeline compiles regulatory text into executable features in 2-3 minutes versus days manually.",
+            "It achieved AUC of 90-91.5% on the IBM AML benchmark.",
+            "We presented the full research to the SVP and director, and we're presenting to the full research team next week.",
+            "⚠️ STOP HERE"
+          ]
+        },
+        "S6_teamwork": {
+          "title": "S6 → Teamwork / Leadership / Collaboration",
+          "bullets": [
+            "[SITUATION] At Scotiabank, our team of three was tasked with building a Customer Risk Score — a framework that scores customers 0 to 100 based on transactional behavior, to complement the existing static Client Risk Rating.",
+            "[TASK — THE TEAM DYNAMIC] All three of us independently proposed feature engineering approaches. My senior manager selected mine, so I took the lead on feature engineering — but I still needed buy-in from my teammates who had invested time in their own proposals.",
+            "[ACTION] Rather than just overruling them, I focused on showing why my approach solved a problem theirs didn't. My teammates proposed rolling window features — counting transactions in 30, 60, 90 day windows. The issue is rolling windows produce multiple rows per customer, but we need strictly one score per customer. I introduced Discrete Wavelet Transform instead.",
+            "I explained it in simple terms: 'What we really want is two things — the customer's overall trend and their short-term frequency. DWT does both in one step and gives us one score per customer. No merging needed.'",
+            "Once I showed a side-by-side comparison on a sample, they were convinced. From there, we worked collaboratively — I led the feature engineering, and we collectively validated the features using multiple models.",
+            "We prototyped in Pandas, then translated to PySpark together once cluster access was granted — millions of rows across six FINTRAC channels.",
+            "[RESULT] The feature set passed validation across both supervised and unsupervised models.",
+            "The CRS framework is now the foundation for Sprint 2, and the features, model validation, and data pipeline all feed into the production system.",
+            "⚠️ STOP — don't go longer"
+          ]
+        },
+        "S1_deadline": {
+          "title": "S1 → Quick Decision / Tight Deadline",
+          "bullets": [
+            "[SITUATION] At the Government of Canada, my team managed a major tax credit program with a workflow that had been manual for decades. Each Tax Credit Officer used their own unstandardized methods, creating inconsistency and a significant bottleneck.",
+            "[TASK — THE TIME PRESSURE] I was tasked with leading a full process re-engineering — designing and deploying a fully automated detection system. My manager's directive was to maximize accuracy to build trust and ensure adoption.",
+            "[ACTION — THE QUICK DECISION] I analyzed over 7,000 historical case files and quickly realized the decision-making process was too complex and non-linear for simple models. I had to make a fast call: the government traditionally relies on logistic regression for interpretability, but the data demanded something more powerful.",
+            "Given the business priority was predictive power over interpretability — and these officers had been making decisions for 20 years with no written rules, just intuition — I chose XGBoost. A tree-based model that mimics the way humans actually make decisions: focus on the most distinguishing signal first.",
+            "Once performance was proven, I collaborated with the back-end engineering team to integrate it into production.",
+            "The entire project — from initial analysis to production deployment — was completed in 2.5 weeks.",
+            "[RESULT] 99.7% accuracy, automated 98% of manual reviews, over $700,000 in annual cost savings.",
+            "The system is still deployed and running in production at the Government of Canada today.",
+            "⚠️ STOP HERE — don't add extras after $700K"
+          ]
+        },
+        "S3": {
+          "title": "S3: Kaggle NLP — Failure & Comeback",
+          "use_for": "failure, setback, resilience, adaptability, learning new skills, persistence",
+          "bullets": [
+            "[SITUATION] I competed in a Kaggle competition for YouTube spam detection.",
+            "My initial approach using Logistic Regression and Naive Bayes got me high on the leaderboard early.",
+            "[TASK] As the competition progressed, my rank dropped below 50th.",
+            "My conventional approach couldn't capture the complex semantic patterns of modern spam.",
+            "(⭐ FAILURE) I had to decide: keep tuning what wasn't working, or invest time learning something fundamentally different.",
+            "[ACTION] I dedicated personal time to self-studying transformer-based models like RoBERTa.",
+            "(⭐ ADAPTABILITY) I architected a hybrid model — combining deep semantic features from RoBERTa with traditional TF-IDF features, then fed the combined features into an ensemble of XGBoost and LightGBM classifiers.",
+            "[RESULT] Climbed back to 2nd place with over 94% accuracy.",
+            "(⭐ LESSON) Key lesson: an initial failure is critical feedback — analyze, learn, iterate.",
+            "⚠️ DON'T mention vector dimensions"
+          ]
+        },
+        "S4": {
+          "title": "S4: Khaveen — Receiving Critical Feedback",
+          "use_for": "feedback, criticism, working under pressure, growth mindset, building trust",
+          "bullets": [
+            "[SITUATION] At Khaveen Investments, a Singapore-based hedge fund, I was preparing my first comprehensive stock pitch.",
+            "I received highly critical feedback from my manager who rigorously questioned my assumptions and analytical depth.",
+            "[TASK] My immediate reaction was frustration — especially in that high-pressure hedge fund environment.",
+            "But I understood the real task was to improve my analytical process and learn to handle direct feedback professionally.",
+            "[ACTION] I shifted my mindset from taking it personally to treating it as a roadmap for improvement.",
+            "(⭐ FEEDBACK) I re-examined every assumption, ensuring all conclusions were backed by hard data rather than surface-level assumptions.",
+            "(⭐ IF ASKED FOR SPECIFIC EXAMPLE) Early on, I projected a stock's growth based on the company's own revenue guidance without cross-referencing analyst consensus or industry trends. My manager called it out: 'You're taking management at face value.' After that, I started cross-referencing every projection against at least two independent sources before putting it in a pitch. That became my standard process.",
+            "In subsequent meetings, I focused on listening carefully, asking clarifying questions, and responding to the professional points being made rather than reacting to the pressure.",
+            "[RESULT] The quality of my analysis improved significantly week after week.",
+            "My manager explicitly recognized my rapid improvement and ability to grow from criticism.",
+            "I completed the internship with a strong endorsement and a reference letter for my graduate school application.",
+            "⚠️ STOP HERE"
+          ]
+        },
         "intro_background": {
           "title": "Walk me through your background",
           "bullets": [
@@ -569,13 +752,37 @@
           ]
         },
         "intro_why_rbc": {
-          "title": "Why RBC / Why this role?",
+          "title": "Why RBC? (replaces old version — focus shifted to RBC specifically)",
           "bullets": [
-            "Three reasons.",
-            "First, the JD overlaps tightly with what I already do — Python, SQL, PySpark, machine learning on customer-level financial data in a regulated environment. The methodology transfers; the domain shift is from AML risk to credit risk.",
-            "Second, EMRM is one of the most methodologically rigorous validation groups in Canadian banking — 2nd Line of Defense, OSFI-facing, covering AIRB parameters and acquisition and account management models. That's the level of depth I want to build my career on.",
-            "Third, the JD explicitly mentions AI/ML techniques and deep learning, and I noticed RBC has a dedicated Director for AI Model Risk. EMRM is one of the few validation teams actively evolving methodology for modern ML models — that's where our field is heading and where I want to contribute.",
-            "⚠️ STOP — three reasons only, don't pile on"
+            "Two reasons, plus something personal.",
+            "[INSTITUTIONAL] First, RBC is in a category of its own in Canadian banking right now — largest bank by market cap (~C$320B), highest ROE among the Big Five (~16%), and post-HSBC Canada the scale advantage has only widened.",
+            "For a validation team, that scale matters — more model variety, more portfolio depth, more methodological challenges to learn from than anywhere else in the country.",
+            "[EMRM SPECIFICALLY] Second — and specifically about EMRM — it's one of the most methodologically rigorous validation groups in Canadian banking. 2nd Line of Defense, OSFI-facing, validating AIRB parameters and acquisition and account management models across Wholesale and Retail. That's the depth I want to build my career on.",
+            "[PERSONAL CLOSER] The personal piece — my current senior manager at Scotiabank actually came from RBC. He consistently speaks highly of the data infrastructure, the methodology rigor, and the caliber of people. Hearing that day-to-day from someone who lived it has been one of the strongest signals for me — it carries more weight than anything I could read from the outside.",
+            "⚠️ DO NOT use 'next bulge bracket / next JPM / next GS' framing — Derek chose to stay at RBC instead of jumping to a US BB",
+            "⚠️ DO NOT pile on a third reason — three reasons feels rehearsed, two + personal feels natural",
+            "⚠️ STOP — about 60 seconds spoken"
+          ]
+        },
+        "intro_master_pitch": {
+          "title": "Master Pitch — Why this role / Why MV / Why now (the big one)",
+          "bullets": [
+            "⚠️ Use this when Derek asks 'why this role' or 'why model validation' or the open-ended 'why are you here' — deliver in chunks based on what he asks",
+            "[PERSONAL THREAD] Honestly, coming back to risk has been a long time coming for me.",
+            "My undergrad specialist at U of T was Mathematical Applications in Economics and Finance — I went in wanting to work in quant and risk.",
+            "Out of undergrad, my technical background opened up a data science path first, which led to Scotiabank.",
+            "But the pull toward mathematical finance and risk never went away — that's part of why I chose Rotman's MMA specifically, to start reconnecting.",
+            "⭐ KEY LINE: 'So this role isn't a pivot for me. It's a return, with a stronger technical foundation than if I'd gone directly.'",
+            "[TIMING THESIS] The timing also feels right. Five to seven years ago, AML at most major banks was largely rule-based — alert systems, high false positive rates, investigators chasing alerts.",
+            "Today my team alone at Scotiabank is 30–40 people: PhDs, ML engineers, MLOps, researchers.",
+            "This week I'm working on detecting trafficking and cartel patterns in the Bahamas corridor — that scope of problem didn't exist five years ago.",
+            "I think credit risk is where AML was five to seven years ago. The shift is necessarily slower because capital regulation demands interpretability — you can't replace an AIRB PD model with a black box.",
+            "[TWO-LAYER PITCH] So my pitch has two parts.",
+            "First — and this is the foundation — I want to build deep credit risk validation expertise. The statistical discipline, AIRB methodology, the regulatory rigor. I respect that as its own craft.",
+            "Second, as the team continues evolving how it validates ML and AI models, I'd love to contribute the perspective I'm building daily — and help build what AI in model risk looks like, together.",
+            "⚠️ DO NOT say 'logistic regression for PD is basically Jupyter modeling' — Derek has 6.5 yrs Wholesale Credit, this minimizes his craft",
+            "⚠️ DO NOT tell Derek what RBC is investing in (e.g. 'AI Model Risk director shows you're investing') — overstepping",
+            "⚠️ STOP — this is ~2 min total spoken, deliver in chunks not one monologue"
           ]
         },
         "intro_why_mv": {
@@ -729,29 +936,6 @@
             "⚠️ STOP"
           ]
         },
-        "prioritization": {
-          "title": "How do you prioritize when you have multiple tasks?",
-          "bullets": [
-            "I prioritize based on who's waiting on my output and what's the business impact.",
-            "At Canadian Heritage, I was running three workstreams simultaneously: the Power BI dashboards, the revenue forecasting model, and the FINTRAC anomaly detection model.",
-            "I prioritized the dashboards first because leadership monitors them every morning — if something breaks, it directly affects their decision-making.",
-            "Second was the revenue forecasting, because the finance team and policy makers were waiting on my numbers to make budget decisions — cross-team dependency.",
-            "Third was the anomaly detection model — that was our data team's own project, a long-term deliverable with no external deadline.",
-            "So my framework is: external dependencies first, cross-team impact second, internal projects third.",
-            "If something is blocking someone else's work, that always goes to the top regardless.",
-            "⚠️ STOP"
-          ]
-        },
-        "risk_mitigation": {
-          "title": "Risk mitigation",
-          "bullets": [
-            "I think about risk at two levels.",
-            "First, project risk — before committing to a technical approach, I validate early. At Scotiabank, before building the full multi-agent pipeline, I ran a proof of concept on a small sample to make sure LLMs could produce usable code at all. If that had failed, I would have known in days instead of weeks.",
-            "Second, delivery risk — I keep stakeholders updated early when something might slip. At Canadian Heritage, when the anomaly detection model was taking longer than expected because the historical data was messier than anticipated, I flagged it to my manager right away rather than trying to absorb the delay silently. We adjusted the timeline together.",
-            "The principle is: validate early, communicate early, and always have a fallback.",
-            "⚠️ STOP"
-          ]
-        },
         "resume_powerbi": {
           "title": "Power BI Dashboards (resume deep dive)",
           "bullets": [
@@ -789,17 +973,6 @@
             "Client placed a follow-up order for 100,000 additional IoT units."
           ]
         },
-        "resume_databricks": {
-          "title": "Databricks (if asked / follow-up)",
-          "bullets": [
-            "I work with PySpark daily on Spark clusters at Scotiabank, and I hold my Azure DP-100 certification, so I am familiar with the Azure ecosystem.",
-            "Databricks is built on the same Spark engine and runs on Azure — the core data manipulation transfers directly. I am building up the platform-specific knowledge through DataCamp.",
-            "(⭐ IF ASKED WHAT SPECIFICALLY) So far I have been focusing on the data layer — Delta Lake adds ACID transactions and version control on top of a data lake, so your data is reliable and you can roll back if something goes wrong.",
-            "I have also been learning about Unity Catalog for data governance — controlling who can access what data, which is critical in banking.",
-            "And MLflow for experiment tracking — logging which model, which parameters, which performance metrics, so you have a full audit trail from experiment to production.",
-            "⚠️ Don't fake deep expertise — show momentum + PySpark foundation + Azure cert"
-          ]
-        },
         "wholesale_retail": {
           "title": "Wholesale vs Retail Bridge (Derek hook — say once naturally)",
           "bullets": [
@@ -833,19 +1006,6 @@
             "FRM / designation (mentor framing): 'You hold CFA, CPA, and CFP. For someone at my stage finishing MMA, would you see FRM as a natural next designation, or is there another path you'd recommend?'",
             "Growth: 'What distinguishes a great Senior Analyst on this team from a solid one? What do you notice in the first year that predicts who grows fastest?'",
             "⚠️ DO NOT ask: compensation, benefits, WFH, team size, 'typical day'"
-          ]
-        },
-        "thankyou_email": {
-          "title": "Thank-You Email (send within 24h)",
-          "bullets": [
-            "Subject: Thank you — Meet & Greet",
-            "Hi Derek, Thank you again for the conversation this afternoon. I appreciated [ONE SPECIFIC THING HE SAID].",
-            "Our conversation reinforced my interest in the Senior Analyst role. The combination of rigorous 2LoD methodology, the breadth from Retail through Wholesale, and a team investing in ML model risk is exactly the environment I'm looking to grow in.",
-            "Please let me know if there's anything else helpful from my side as the process moves forward.",
-            "Best regards, Jerry (Zongheng) Li",
-            "⭐ Fill-in examples: 'your perspective on the shift from Wholesale Credit into validation mindset', 'the way EMRM is scaling ML model validation', 'your advice on the FRM designation', 'hearing how the team balances business and quant perspectives'",
-            "⚠️ KEEP IT SHORT — 4-5 sentences max",
-            "⚠️ Send from zongheng.li@rotman.utoronto.ca"
           ]
         },
         "S5_followups": {
@@ -904,16 +1064,7 @@
           ]
         }
       },
-      "my_questions": {
-        "title": "QUESTIONS FOR DEREK — ask the KING Q + 1-2 others",
-        "items": [
-          "[KING] You spent 6+ years in Wholesale Credit before moving to EMRM about two years ago. What's been the biggest mindset shift for you — from doing credit analysis to validating the same types of models?",
-          "How does EMRM balance quant-heavy directors with business-focused leaders like yourself? I imagine the challenge is getting both lenses on every validation.",
-          "How is EMRM thinking about ML and AI model validation as the industry evolves? I noticed RBC has a dedicated AI Model Risk director.",
-          "You hold CFA, CPA, and CFP — for someone at my stage finishing MMA, would you see FRM as a natural next designation?",
-          "What distinguishes a great Senior Analyst on this team from a solid one? What predicts who grows fastest?"
-        ]
-      }
+      "my_questions": null
     },
     {
       "id": "technical",
@@ -928,280 +1079,368 @@
       ],
       "themes": [
         {
+          "label": "📋 PD build — basic steps",
+          "primary_story": "walkthrough_pd_build",
+          "focus": null,
+          "backup_story": null,
+          "group": "Case Studies"
+        },
+        {
+          "label": "📋 PyTorch training flow + knobs",
+          "primary_story": "walkthrough_pytorch_flow",
+          "focus": null,
+          "backup_story": null,
+          "group": "Case Studies"
+        },
+        {
+          "label": "📋 LGD walkthrough",
+          "primary_story": "walkthrough_lgd",
+          "focus": null,
+          "backup_story": null,
+          "group": "Case Studies"
+        },
+        {
+          "label": "📋 EAD / CCF walkthrough",
+          "primary_story": "walkthrough_ead",
+          "focus": null,
+          "backup_story": null,
+          "group": "Case Studies"
+        },
+        {
+          "label": "🎯 PD Validation case (ex1 end-to-end)",
+          "primary_story": "case_pd_validation",
+          "focus": null,
+          "backup_story": null,
+          "group": "Case Studies"
+        },
+        {
+          "label": "🎯 Credit Card Fraud PyTorch (MLP case)",
+          "primary_story": "case_creditcard_pytorch",
+          "focus": null,
+          "backup_story": null,
+          "group": "Case Studies"
+        },
+        {
           "label": "LR — explain to executive (non-technical)",
           "primary_story": "tech_lr_exec",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "LR — feature significance ranking",
           "primary_story": "tech_lr_significance",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "LR — assumptions + diagnostics",
           "primary_story": "tech_lr_assumptions",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "Linear Regression — assumptions",
           "primary_story": "tech_linreg_assumptions",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "Multicollinearity — detect + solve (VIF)",
           "primary_story": "tech_multicollinearity",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "Bias-Variance tradeoff",
           "primary_story": "tech_bias_variance",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "Lasso vs Ridge vs LARS (L1 vs L2)",
           "primary_story": "tech_regularization",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "AIC / BIC / p-value — variable selection",
           "primary_story": "tech_variable_selection",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "A/B Testing + hypothesis testing",
           "primary_story": "tech_ab_testing",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "Bayes' Theorem",
           "primary_story": "tech_bayes",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "Monte Carlo Simulation",
           "primary_story": "tech_monte_carlo",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Statistics & Fundamentals"
         },
         {
           "label": "EL = PD × LGD × EAD (MEMORIZE)",
           "primary_story": "tech_el_formula",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "PD quarterly → annual (MEMORIZE)",
           "primary_story": "tech_pd_quarterly",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "WoE + IV (formula + thresholds)",
           "primary_story": "tech_woe_iv",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "AUC / KS / Gini (credit benchmarks)",
           "primary_story": "tech_auc_ks_gini",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "PSI — drift monitoring + pitfall",
           "primary_story": "tech_psi",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "Hosmer-Lemeshow calibration test (trap!)",
           "primary_story": "tech_hl",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "Binomial backtest traffic light",
           "primary_story": "tech_backtest",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "Quasi-separation (killer finding)",
           "primary_story": "tech_quasi_sep",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "Train/test parity ≠ no leakage (4 failure modes)",
           "primary_story": "tech_parity_leak",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "Calibration vs Discrimination",
           "primary_story": "tech_cal_vs_disc",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "Data reconciliation (validator reflex)",
           "primary_story": "tech_reconciliation",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Credit Risk Modeling"
         },
         {
           "label": "Basel III — Pillars 1 / 2 / 3",
           "primary_story": "tech_basel_pillars",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "AIRB vs F-IRB",
           "primary_story": "tech_airb",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "OSFI E-23 / SR 11-7 (MRM guidance)",
           "primary_story": "tech_osfi_e23",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "Regulatory vs Economic Capital",
           "primary_story": "tech_reg_vs_econ",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "Wholesale vs Retail (LDP + Merton)",
           "primary_story": "tech_wholesale_retail",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "Account Mgmt vs Acquisition models",
           "primary_story": "tech_acct_vs_acq",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "IFRS 9 ECL",
           "primary_story": "tech_ifrs9",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "LGD modeling (Beta / Tobit / fractional)",
           "primary_story": "tech_lgd",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "EAD + CCF formula (revolving)",
           "primary_story": "tech_ead",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "5 risk categories (market/credit/ops/liq/climate)",
           "primary_story": "tech_risk_cats",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "VaR (market risk measure)",
           "primary_story": "tech_var",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Risk & Finance Frameworks"
         },
         {
           "label": "Data cleaning 5-step framework",
           "primary_story": "tech_data_cleaning",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "ML & Deep Learning"
         },
         {
           "label": "Supervised vs Unsupervised ML",
           "primary_story": "tech_sup_unsup",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "ML & Deep Learning"
         },
         {
           "label": "PCA / t-SNE (dim reduction)",
           "primary_story": "tech_pca_tsne",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "ML & Deep Learning"
         },
         {
           "label": "K-means clustering",
           "primary_story": "tech_kmeans",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "ML & Deep Learning"
         },
         {
           "label": "SVM + one-class SVM",
           "primary_story": "tech_svm",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "ML & Deep Learning"
         },
         {
           "label": "Neural Network + backprop basics",
           "primary_story": "tech_nn",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "ML & Deep Learning"
         },
         {
           "label": "Autoencoder",
           "primary_story": "tech_autoencoder",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "ML & Deep Learning"
         },
         {
           "label": "PyTorch honest answer",
           "primary_story": "tech_pytorch",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "ML & Deep Learning"
         },
         {
           "label": "SAS — if vs where, merge, nodup",
           "primary_story": "tech_sas",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Programming"
         },
         {
           "label": "SQL — joins + UNION",
           "primary_story": "tech_sql",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Programming"
         },
         {
           "label": "Python — list/tuple/dict, join/split",
           "primary_story": "tech_python",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Programming"
         },
         {
           "label": "R — lapply/sapply",
           "primary_story": "tech_r",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Programming"
         },
         {
           "label": "Brain teasers (handshake / lily / dice)",
           "primary_story": "tech_brain_teasers",
           "focus": null,
-          "backup_story": null
+          "backup_story": null,
+          "group": "Brain Teasers"
         }
       ],
       "stories": {
@@ -1665,13 +1904,18 @@
           ]
         },
         "tech_pytorch": {
-          "title": "PyTorch — Honest Answer",
+          "title": "PyTorch — Felix's direct question (answer with confidence)",
           "bullets": [
-            "I've worked in PyTorch at the fundamentals level — tensors, autograd, basic training loops — but I haven't deployed deep-learning models in production.",
-            "My hands-on depth is in classical ML and statistical models, which I see as the right foundation for model validation in a regulated context where interpretability dominates.",
-            "For the multi-agent pipeline, the ML backbone I used was scikit-learn and Isolation Forest — LLMs were called via API rather than trained.",
-            "I'd build DL project depth on the job if I'm asked to validate internal DL models.",
-            "⚠️ Don't fake DL expertise — honest + methodology bridge is better."
+            "⚠️ Felix Kan (AI Model Risk Director) asked about PyTorch in his email. Answer with concrete projects, NOT 'honest limitations'.",
+            "[HEADLINE] Intermediate level — end-to-end training code, three concrete projects.",
+            "[PROJECT 1 — Kaggle RoBERTa] Fine-tuned RoBERTa for YouTube spam NLP — hybrid with TF-IDF + XGBoost/LightGBM ensemble. Placed 2nd place, >94% accuracy.",
+            "[PROJECT 2 — Credit Card Fraud MLP, just completed] 284k transactions, 0.17% fraud. End-to-end PyTorch: stratified split with scaler fit on train only (no leakage), 3-layer MLP with dropout 0.3, BCEWithLogitsLoss + pos_weight=577 for severe imbalance, early-stop on PR-AUC (not loss, because loss is pos_weight-scaled). Val PR-AUC 0.78.",
+            "[PROJECT 3 — Rotman] RSM8421 AI and Deep Learning Tools coursework. PyTorch + TensorFlow.",
+            "(⭐ CODE FLUENCY — use if asked to write something) I can write forward / loss.backward() / optimizer.step() from memory. I know why logits + BCEWithLogitsLoss is numerically stable via log-sum-exp versus sigmoid + plain BCELoss. I know why model.train() vs .eval() matters for dropout and BatchNorm.",
+            "(⭐ HONEST DELTA — small, at the end) I haven't shipped a custom architecture to production yet — that's what I'm actively deepening with my team at Scotia.",
+            "⚠️ DO NOT say 'my hands-on depth is in classical ML' — undersells the RoBERTa + MLP work",
+            "⚠️ DO NOT lead with limitations — LEAD with projects, end with honest delta",
+            "⚠️ See 'Credit Card Fraud PyTorch (case)' theme for deep-dive ammunition"
           ]
         },
         "tech_sas": {
@@ -1737,6 +1981,167 @@
             "DICE SUM 8 | FIRST=3: need second = 5. Prob = 1/6.",
             "TWO GIRLS GIVEN ONE GIRL: sample space is {GG, GB, BG}. Only GG satisfies both girls. P = 1/3.",
             "⚠️ These are common warm-ups. Don't overthink — say the framework clearly then compute."
+          ]
+        },
+        "case_pd_validation": {
+          "title": "🎯 PD Validation Walkthrough (ex1 case — end-to-end)",
+          "bullets": [
+            "Use this when asked 'walk me through how you'd validate a PD model' or for end-to-end ML case-study questions.",
+            "[DATA] Binary PD target, 2000 rows, 3 features (income, age, loan). Validator mindset from turn 1 — reconciliation before anything else.",
+            "[STEP 1 — RECONCILIATION] First 30 seconds = data integrity. Primary key uniqueness, missing-per-column, target strictly binary, plausibility ranges, class balance (14% default — moderate imbalance).",
+            "[⚠️ FINDING 1] 3 missing age values (0.15%). Treat as MCAR with n=3, drop with documentation. If material >5% I'd test MAR by checking if missingness correlates with observed variables.",
+            "[⚠️ FINDING 2 — data integrity error] age minimum = −52.42. NOT a missing-data problem — an integrity error. Absolute values 28, 52, 36 — all plausible adult ages → sign error in source ETL, likely reference_date − birth_date reversed. Flag to data stewardship; do NOT silently abs() the column (masks the pipeline bug).",
+            "[STEP 2 — BIVARIATE EDA] Age shows step-cliff at 35 (38% default below, 0% above) — suspiciously sharp. Loan smooth monotonic. Income flat (no univariate signal).",
+            "[⭐ LEAKAGE FLAG] Age IV = 3.76 (7× the 0.5 suspicious threshold). Loan IV = 2.04 (4×). Classic leakage signature — would escalate for derivation-timestamp review in production.",
+            "[STEP 3 — MULTICOLLINEARITY] Pearson correlation + VIF. All VIFs ≈ 1.0–1.25 — no concern. Reminder: statsmodels.variance_inflation_factor needs add_constant() first or VIFs inflate.",
+            "[STEP 4 — LR FIT] statsmodels over sklearn — validators need p-values, SE, CIs, convergence diagnostics. Pseudo-R² = 0.73 (high). Signs intuitive: income (−), age (−), loan (+). All p<0.001 but unreliable under quasi-separation.",
+            "[STEP 5 — DISCRIMINATION] AUC 0.98, Gini 0.97, KS 0.88 on test. All three above 'suspicious' threshold — consistent with leakage diagnosis.",
+            "[STEP 6 — OVERFIT CHECK] Train-test gap negligible. Rules out classical overfitting but NOT leakage — matching parity at implausibly-high levels is itself a leakage signature, not an innocence proof.",
+            "[STEP 7 — CALIBRATION] Reliability plot — 80% of scores collapse near 0 (quasi-separation / score saturation). Only 2 bins informatively testable. Hosmer–Lemeshow p = 0.77 = non-rejection from under-power, NOT genuine calibration.",
+            "[STEP 8 — PSI STABILITY] Train-vs-test PSI < 0.01 — no drift (expected from stratified split). Simulated production drift (age −10, loan +40%) → PSI > 0.25; bin-level contributions pinpoint the demographic shift.",
+            "[STEP 9 — BACKTESTING] Binomial traffic light per grade. Baseline all 🟢 but 4/5 trivially (no defaults predicted → underpowered). Stressed 30% under-prediction scenario flips top grade to 🔴, p < 0.001 — test has real detection power when the signal exists.",
+            "[⭐ RECOMMENDATION] DO NOT APPROVE as currently constructed. Age and loan features need derivation-timestamp review to rule out target leakage. Quasi-separation must be remediated (Firth's penalized likelihood or re-specification) before discrimination / calibration / backtesting conclusions can be trusted.",
+            "[⭐ TOOLBOX RECAP — if asked 'what's your validation toolbox'] Reconciliation → WoE/IV → Correlation + VIF → statsmodels fit → AUC/KS/Gini → Train/test gap → Reliability + HL → PSI (feature + score + bin-level) → Binomial backtest → Leakage flag (IV > 0.5)."
+          ]
+        },
+        "case_creditcard_pytorch": {
+          "title": "🎯 Credit Card Fraud PyTorch MLP (hands-on case)",
+          "bullets": [
+            "Use this for 'tell me about this project' / PyTorch experience / handling imbalance / end-to-end DL case.",
+            "[30-SEC PITCH] End-to-end PyTorch fraud classifier on Kaggle credit card dataset. 284,807 txns, 492 fraud = 0.17% imbalance. Framed through a model validation lens: champion MLP, logistic regression challenger, PSI for stability, calibration analysis.",
+            "[DATA] Features: V1–V28 PCA-anonymized + Time + Amount. Primary metric: PR-AUC (not accuracy — accuracy misleads on imbalanced data).",
+            "[EDA] log1p(Amount) tames right-skew — linear layers prefer symmetric distributions. Time → hour-of-day with CYCLIC sin/cos encoding so hour 23 is a neighbor of hour 0. Cohen's d for V* separability: V17 d=8.3 (huge signal — classes barely overlap).",
+            "[LEAKAGE DISCIPLINE] Stratified 70/15/15 preserves 0.17% fraud rate per split. scaler.fit_transform(X_train) → transform(X_val/test). Never fit on full data.",
+            "[⭐ LEAKAGE LINE — memorize] 'If you fit the scaler on full data, training-time stats leak test distribution info into the model. Test metrics become optimistic; production performance surprises you when the real distribution differs.'",
+            "[MODEL] 3-layer MLP, 4,161 params. Input(31) → Linear(64) → ReLU → Dropout(0.3) → Linear(32) → ReLU → Dropout(0.3) → Linear(1) raw logit. NO sigmoid in forward.",
+            "[⭐ WHY NO SIGMOID — top-5 PyTorch Q] 'Keep outputs as raw logits and use BCEWithLogitsLoss. The fused version is numerically stable via log-sum-exp internally — avoids log(0) at extreme logits. Sigmoid + plain BCELoss is the naive unstable pattern.'",
+            "[WHY SMALL MODEL] Only 492 fraud cases to learn from. Big model memorizes, not generalizes. Complexity must earn its place.",
+            "[⭐ WHY .squeeze(-1) in forward] Output (batch, 1) vs y (batch,). BCE silently broadcasts to a (batch, batch) matrix — doesn't crash, silently wrong. Classic gotcha.",
+            "[IMBALANCE] pos_weight = n_neg / n_pos ≈ 577. Upweights fraud-class loss 577× so class contributions become equal — one fraud = 577 legit cases of signal. Doesn't distort underlying data distribution (unlike oversampling). Simpler than WeightedRandomSampler or focal loss.",
+            "[OPTIMIZER] AdamW, lr=1e-3, weight_decay=1e-5. Real regularizer = dropout + small model, NOT weight_decay.",
+            "[TRAINING LOOP — the 5 steps] optimizer.zero_grad() → model(xb) → loss → loss.backward() → optimizer.step(). zero_grad prevents gradient accumulation bug. backward() walks autograd graph to fill .grad. step() does w ← w − lr·grad (+ Adam momentum).",
+            "[⭐ train() vs eval()] train() = dropout ON, BN tracks stats. eval() = dropout OFF, BN uses running stats. Forget eval mode → metrics silently noisy-wrong. Always wrap eval with torch.no_grad() for ~2–3× speedup + memory.",
+            "[EARLY STOP] Monitor val PR-AUC, NOT loss — loss is pos_weight-scaled (577×) so its absolute value doesn't track ranking quality. Patience=5, reload best-val checkpoint.",
+            "[RESULTS] Val PR-AUC 0.78 at epoch 8. Train loss ↓ + val loss ↑ from epoch 4 = overfit signature, but val PR-AUC stayed flat → ranking preserved. Loss degrades BEFORE ranking does — why we track PR-AUC.",
+            "[CONTEXT] Random baseline PR-AUC ≈ 0.002. LR ≈ 0.74. My MLP 0.78. Tuned XGBoost likely ~0.85.",
+            "[⭐ HONEST VALIDATOR FRAMING] 'My MLP hit 0.78, basically matching LR. Interesting validator finding: non-linearity didn't buy much on this dataset. A well-tuned XGBoost would likely dominate both. If asked whether the MLP's complexity is justified — probably not without more tuning. That honesty is exactly the reasoning EMRM looks for.'",
+            "[CALIBRATION GOTCHA] pos_weight distorts probability calibration. Ranking intact, probabilities wrong — model learns 'saying fraud is cheap'. Fix: Platt scaling (LR on logits) or isotonic regression, fit on held-out val.",
+            "[⭐ WHY CALIBRATION MATTERS FOR EMRM] 'For production — especially credit risk — calibrated probabilities matter because downstream decisions (capital allocation, threshold policies) assume p=0.9 means 90%. A well-ranked but miscalibrated model misprices risk.'",
+            "[CHALLENGER] LR as simple baseline. Single model in isolation is un-validatable. LR ~0.74, MLP 0.78 → MLP barely wins. Validator would push 'prove the lift'.",
+            "[THRESHOLD] 0.5 is almost never right. Cost-based: pick t* minimizing C_FN·FN(t) + C_FP·FP(t) on val, report cost on test. Threshold = where business policy meets the model.",
+            "[PSI STABILITY] PSI = Σ(%test − %train)·ln(%test/%train), 10 buckets fixed from train. <0.10 stable, 0.10–0.25 monitor, >0.25 retrain.",
+            "[⭐ TOP 5 MEMORIZE] (1) logits + BCEWithLogitsLoss — stable via log-sum-exp. (2) pos_weight = n_neg/n_pos = 577 — equal class contributions, no data distortion. (3) Fit scaler on TRAIN ONLY — never full data. (4) Early stop on PR-AUC, not loss. (5) pos_weight breaks calibration; fix with Platt/isotonic, ranking survives.",
+            "[IF BRAIN FREEZES — spine] Data (imbalance) → Model (small MLP, logits) → Loss (pos_weight) → Training (early-stop on PR-AUC) → Eval (PR-AUC + calibration needs fix) → Validation (challenger LR + PSI + threshold cost)."
+          ]
+        },
+        "walkthrough_pd_build": {
+          "title": "📋 PD Model Build — basic steps (plain-English walkthrough)",
+          "bullets": [
+            "⚠️ Use when Felix asks 'walk me through building a PD model' — the BUILD flow, not validation.",
+            "[BACKGROUND] PD = probability a customer defaults in the next 12 months. It's the core parameter in credit risk — every credit card approval, every mortgage starts with a PD model.",
+            "[1. DEFINE TARGET] What counts as default? Basel says 90 days past due, or 'unlikely to pay' — bankruptcy, restructuring. Fix an observation window (e.g., 12 months of behavior) and an outcome window (next 12 months for default).",
+            "[2. DATA] Pull KYC (onboarding info) + behavioral (payments, utilization) + bureau (credit score) + macro. Reconcile totals to source GL — the validator reflex.",
+            "[3. SEGMENT] Build separate models per product — credit cards vs mortgages vs personal loans. Mixing segments dilutes signal.",
+            "[4. FEATURE ENG] WoE transform — bin continuous variables, convert each bin to log-odds. Makes features linear-in-logit for LR, handles missing as its own bin.",
+            "[5. UNIVARIATE SCREEN] Compute IV per feature. Drop IV < 0.02 (useless). Flag IV > 0.5 (suspicious — usually leakage). Sweet spot is 0.1 – 0.3.",
+            "[6. MULTICOLLINEARITY] Correlation matrix + VIF. VIF > 10 → drop or merge the redundant feature.",
+            "[7. VARIABLE SELECTION] Stepwise + AIC/BIC + p-values + business judgment. Regulators want documented rationale, not just Lasso output.",
+            "[8. FIT] Use statsmodels, NOT sklearn. You need p-values, standard errors, confidence intervals, convergence diagnostics — sklearn hides all of that.",
+            "[9. DISCRIMINATION] AUC / KS / Gini on test. Retail PD target ~0.75–0.85 AUC. Above 0.90 is suspicious — probably leakage.",
+            "[10. CALIBRATION] Hosmer–Lemeshow + reliability diagram. For regulatory capital this matters MORE than discrimination, because capital depends on the actual PD level, not just ranking.",
+            "[11. OOT VALIDATION] Out-of-time holdout is the real test for PD. A random stratified split can look great and still fail in production.",
+            "[12. SCORECARD SCALING] Convert log-odds to points (points-to-double-odds convention). Makes the output readable for officers — 700 = good, 500 = risky.",
+            "[13. GOVERNANCE] Document data lineage, variable rationale, diagnostics. Submit to 2LoD EMRM for independent validation before production use.",
+            "[14. PROD MONITORING] PSI monthly (features + score), binomial backtest per grade. Recalibration trigger when the traffic light flips red.",
+            "(⭐ TRADE-OFF — if asked LR vs XGBoost) 'LR wins for regulatory PD — interpretability, regulator trust, stable coefficients. XGBoost buys 2–3 percentage points of AUC but costs explainability. In credit risk the explainability is worth it.'"
+          ]
+        },
+        "walkthrough_pytorch_flow": {
+          "title": "📋 PyTorch Training Flow — steps, knobs, trade-offs",
+          "bullets": [
+            "⚠️ Use when Felix asks 'walk me through training a neural net' or 'what happens if lr is too high'. Generic flow — not project-specific.",
+            "[5-STEP TRAINING LOOP inside every batch]",
+            "• optimizer.zero_grad() — clear stale gradients. Forget this and grads accumulate (classic bug).",
+            "• logits = model(X) — forward pass, builds the autograd graph.",
+            "• loss = criterion(logits, y) — compute loss.",
+            "• loss.backward() — walk the graph backwards, fill .grad on each parameter.",
+            "• optimizer.step() — update weights: w ← w − lr·grad (plus optimizer state like Adam's momentum).",
+            "",
+            "[⭐ KNOBS + TRADE-OFFS — the meat of the answer]",
+            "• LEARNING RATE — too high → diverges, loss goes NaN. Too low → slow or stuck. Defaults: 1e-3 for Adam, 1e-2 for SGD.",
+            "• BATCH SIZE — bigger = smoother gradient + faster wall-clock, but more memory and LESS implicit regularization. Smaller = noisier gradient (sometimes helps generalization) but slower.",
+            "• MODEL DEPTH / WIDTH — bigger → more expressivity, more overfit risk, harder to train (vanishing/exploding gradients). Match capacity to data size.",
+            "• DROPOUT — higher (say 0.5) = stronger regularization but can underfit. Lower (0.1–0.2) = weaker but safer.",
+            "• WEIGHT DECAY — mild regularization, usually less effective than dropout. Often paired with dropout.",
+            "• ACTIVATION — ReLU is default. Leaky ReLU / GELU to fix dying ReLU. Tanh / sigmoid rarely in hidden layers anymore.",
+            "• EARLY-STOPPING PATIENCE — longer = more chance to recover a dip, but risks wasted compute. Monitor the val METRIC you'd report, not the loss if it's scaled (e.g., pos_weight makes loss misleading).",
+            "• OPTIMIZER — AdamW is robust + fast. SGD + momentum sometimes generalizes better, especially in vision.",
+            "",
+            "[⭐ DEBUG FLAGS — if something goes wrong]",
+            "• Loss = NaN → lr too high, or log(0) / division by zero somewhere, or inputs not standardized.",
+            "• Loss not dropping → model too small, lr too low, or bug in forward.",
+            "• Train loss ↓ but val loss ↑ → classic overfitting. Add dropout, add data, or early-stop.",
+            "",
+            "[⭐ ONE-LINERS TO DROP]",
+            "• 'I keep model outputs as raw logits and use BCEWithLogitsLoss — the fused version is numerically stable via log-sum-exp.'",
+            "• 'model.train() vs model.eval() matters — dropout and BatchNorm behave differently. Forget eval mode and metrics are silently noisy-wrong.'",
+            "• 'Wrap eval with torch.no_grad() — 2–3× faster plus memory savings because autograd is off.'"
+          ]
+        },
+        "walkthrough_lgd": {
+          "title": "📋 LGD Model — walkthrough (AIRB parameter #2, in plain English)",
+          "bullets": [
+            "⚠️ Use if asked 'how do you build an LGD model' or 'how is LGD different from PD'.",
+            "[BACKGROUND] LGD = Loss Given Default = what percentage of the exposure you lose if a customer defaults, net of recovery. If you're owed $100k and recover $40k, LGD = 60%. Unsecured credit card LGD is typically 60–70%. A mortgage (collateralized by the house) is much lower — 20–30%.",
+            "[⭐ WHAT MAKES LGD HARD] The target distribution is BIMODAL — most cases are either 0 (full recovery) or 1 (total loss). Very few in the middle. Plain linear regression doesn't fit that shape.",
+            "",
+            "[TWO DATA FLAVORS]",
+            "• WORKOUT LGD — track actual recoveries over a multi-year workout period. Ground truth, but slow — a workout can take years.",
+            "• MARKET LGD — inferred from distressed-debt trading prices. Fast but only a proxy.",
+            "",
+            "[HOW YOU BUILD IT]",
+            "[1. SEGMENT] Separate models per collateral type (secured-mortgage, secured-auto, unsecured), by product, by facility seniority.",
+            "[2. DRIVERS] LTV (loan-to-value ratio), collateral type, product age, macro (GDP, unemployment), legal jurisdiction (some provinces recover faster than others).",
+            "[3. MODEL FAMILIES — pick based on target shape]",
+            "• BETA REGRESSION — the natural fit for a (0, 1) continuous target.",
+            "• TOBIT — handles the censoring at 0 and 1 directly.",
+            "• FRACTIONAL RESPONSE (quasi-MLE) — robust to distribution assumptions.",
+            "• TWO-STAGE — first a classifier for 0-vs-positive LGD, then regress the magnitude given positive. Often wins on bimodal data.",
+            "[4. METRICS] MAE, RMSE, Spearman rank correlation. NOT AUC — LGD isn't a classification problem.",
+            "[5. CALIBRATION] Compare mean predicted LGD vs mean observed LGD per segment. Under-prediction = capital shortfall; over-prediction = capital waste.",
+            "[6. VALIDATION] Same discipline as PD — OOT, PSI on inputs, segment-level backtest, stability across macro cycles.",
+            "",
+            "[⭐ COMMON PITFALL — validator question] 'Is the workout window long enough to capture terminal recovery? If it's truncated, LGD is systematically understated because late recoveries aren't captured yet.'",
+            "[BASEL] F-IRB regulators supply LGD as a fixed value. A-IRB banks estimate internally — RBC is A-IRB, which is why EMRM independently validates every LGD model."
+          ]
+        },
+        "walkthrough_ead": {
+          "title": "📋 EAD / CCF Model — walkthrough (AIRB parameter #3)",
+          "bullets": [
+            "⚠️ Use if asked 'walk me through EAD' or 'how do you model revolving credit exposure'.",
+            "[BACKGROUND] EAD = Exposure at Default = the dollar amount at risk at the moment a customer defaults.",
+            "",
+            "[TWO CASES]",
+            "• TERM LOANS (mortgages, installment) — easy. EAD ≈ outstanding balance at default. The amortization schedule is deterministic.",
+            "• REVOLVING (credit cards, lines of credit) — this is where the modeling lives. A customer who's about to default often DRAWS DOWN their unused credit first.",
+            "",
+            "[THE FORMULA] EAD = drawn + CCF × (limit − drawn)",
+            "",
+            "[⭐ CCF — Credit Conversion Factor] The empirical percentage of UNUSED credit that gets DRAWN before default.",
+            "[⭐ KEY EMPIRICAL FACT — memorize this] CCF > 0. Customers draw down heavily in the months right before defaulting. That's the whole reason EAD modeling exists for revolving products.",
+            "[CONCRETE EXAMPLE] Customer has a $10k credit-card limit, currently using $3k. In the 6 months before default they draw another $5k. CCF = $5k / $7k unused ≈ 71%.",
+            "",
+            "[HOW YOU BUILD IT]",
+            "[1. OBSERVATION WINDOW] How far before default do you measure utilization? Typical 12 months. Too short misses the drawdown ramp. Too long includes stale data.",
+            "[2. DRIVERS] Current utilization %, limit tier, days-past-due bucket, months since last payment, product type.",
+            "[3. MODEL] Target is bounded [0, 1] — same model family as LGD: Beta regression, fractional response. OR empirically estimated per segment (a ratio estimator — just the average CCF for each bucket).",
+            "[4. METRICS] MAE, RMSE on realized CCF vs predicted. Mean comparison per segment.",
+            "[5. VALIDATION] OOT + sensitivity analysis on window length + PSI for stability + benchmark against Basel's supplied CCF (e.g., 75% for committed undrawn).",
+            "",
+            "[⭐ COMMON PITFALL — validator question] 'Observation window choice drives CCF estimates. Too short misses the drawdown approaching default; too long includes irrelevant history. A sensitivity study on window length is table stakes.'",
+            "[BASEL] F-IRB supplies CCF. A-IRB estimates internally — again what EMRM validates.",
+            "",
+            "[⭐ RELATIONSHIP TO PD + LGD] EAD, LGD, PD are the three AIRB parameters. EL = PD × LGD × EAD. PD sets the frequency, LGD sets the severity, EAD sets the dollar size. EMRM validates all three independently — knowing that framing signals you understand the structure."
           ]
         }
       },

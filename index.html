@@ -118,6 +118,33 @@
   }
   .theme-btn.behavioral { border-left: 3px solid #e94560; }
   .theme-btn.intro { border-left: 3px solid #818cf8; }
+  .theme-btn.resume { border-left: 3px solid #fbbf24; background: rgba(251, 191, 36, 0.04); }
+  .theme-btn.resume:hover { background: rgba(251, 191, 36, 0.12); border-color: rgba(251, 191, 36, 0.5); }
+
+  /* Group headers inside theme grid */
+  .group-header {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #888;
+    margin: 10px 0 4px;
+    padding: 2px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+  }
+  .group-header:first-child { margin-top: 0; }
+  /* General + Resume tab groups */
+  .group-header.resume { color: #fbbf24; border-bottom-color: rgba(251,191,36,0.25); }
+  .group-header.derek { color: #c4b5fd; border-bottom-color: rgba(196,181,253,0.25); }
+  .group-header.general { color: #94a3b8; }
+  /* Technical tab groups — each its own color */
+  .group-header.cases { color: #fcd34d; border-bottom-color: rgba(252,211,77,0.3); }
+  .group-header.stats { color: #5eead4; border-bottom-color: rgba(94,234,212,0.25); }
+  .group-header.credit { color: #fb7185; border-bottom-color: rgba(251,113,133,0.25); }
+  .group-header.frameworks { color: #fdba74; border-bottom-color: rgba(253,186,116,0.25); }
+  .group-header.mldl { color: #a78bfa; border-bottom-color: rgba(167,139,250,0.25); }
+  .group-header.programming { color: #86efac; border-bottom-color: rgba(134,239,172,0.25); }
+  .group-header.teasers { color: #94a3b8; }
 
   /* Story panel */
   .story-panel {
@@ -262,11 +289,10 @@
     transition: all 0.15s;
   }
   .tab-btn:hover { color: #ccc; background: rgba(255,255,255,0.03); }
-  .tab-btn.active {
-    color: #fff;
-    border-bottom-color: #818cf8;
-    background: rgba(129,140,248,0.1);
-  }
+  /* Per-tab active accent colors */
+  .tab-btn.tab-0.active { color: #fff; border-bottom-color: #e94560; background: rgba(233,69,96,0.12); }
+  .tab-btn.tab-1.active { color: #fff; border-bottom-color: #fbbf24; background: rgba(251,191,36,0.12); }
+  .tab-btn.tab-2.active { color: #fff; border-bottom-color: #4ade80; background: rgba(74,222,128,0.12); }
 </style>
 </head>
 <body>
@@ -305,7 +331,7 @@
     }
     bar.style.display = 'flex';
     bar.innerHTML = DATA.tabs.map((t, i) =>
-      `<button class="tab-btn${i === activeTabIdx ? ' active' : ''}" onclick="switchTab(${i})">${escHtml(t.label)}</button>`
+      `<button class="tab-btn tab-${i}${i === activeTabIdx ? ' active' : ''}" onclick="switchTab(${i})">${escHtml(t.label)}</button>`
     ).join('');
   }
 
@@ -382,14 +408,52 @@
     const stories = TAB.stories || {};
     let html = '';
 
-    // Theme grid
-    html += '<div class="theme-grid">';
+    // Group themes by `group` field, preserving first-occurrence order
+    const groupOrder = [];
+    const groupMap = {};
     themes.forEach((t, i) => {
-      const cls = isIntroTheme(t) ? 'intro' : 'behavioral';
-      const active = activeTheme === i ? ' active' : '';
-      html += `<button class="theme-btn ${cls}${active}" onclick="selectTheme(${i})">${escHtml(t.label)}</button>`;
+      const g = t.group || '';
+      if (!(g in groupMap)) {
+        groupMap[g] = [];
+        groupOrder.push(g);
+      }
+      groupMap[g].push({ theme: t, idx: i });
     });
-    html += '</div>';
+
+    const GROUP_CLASS_MAP = [
+      [/resume/, 'resume'],
+      [/derek/, 'derek'],
+      [/general|career/, 'general'],
+      [/case/, 'cases'],
+      [/statistic|fundamental/, 'stats'],
+      [/credit risk/, 'credit'],
+      [/risk.*finance|framework/, 'frameworks'],
+      [/ml|deep learning/, 'mldl'],
+      [/programming/, 'programming'],
+      [/teaser/, 'teasers']
+    ];
+    function pickGroupClass(name) {
+      const n = name.toLowerCase();
+      for (const [re, cls] of GROUP_CLASS_MAP) {
+        if (re.test(n)) return cls;
+      }
+      return '';
+    }
+
+    groupOrder.forEach(gName => {
+      if (gName) {
+        const cls = pickGroupClass(gName);
+        html += `<div class="group-header${cls ? ' ' + cls : ''}">${escHtml(gName)}</div>`;
+      }
+      html += '<div class="theme-grid">';
+      groupMap[gName].forEach(({ theme, idx }) => {
+        let cls = isIntroTheme(theme) ? 'intro' : 'behavioral';
+        if ((theme.group || '').toLowerCase().includes('resume')) cls = 'resume';
+        const active = activeTheme === idx ? ' active' : '';
+        html += `<button class="theme-btn ${cls}${active}" onclick="selectTheme(${idx})">${escHtml(theme.label)}</button>`;
+      });
+      html += '</div>';
+    });
 
     // Story panel
     if (activeTheme !== null) {
